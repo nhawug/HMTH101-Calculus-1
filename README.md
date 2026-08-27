@@ -8,7 +8,7 @@ This repository contains my digitized study notes based on the lectures by G. NH
 
 Below are the direct links to the compiled PDFs and LaTeX source code for each chapter. 
 
-*   **[Chapter 1: The Basics](./chapter 1/Chapter1.pdf/)**
+*   **[Chapter 1: The Basics](./Chapter_1_The_Basics/Chapter1.pdf)**
     *   Includes Number Systems, Intervals, Solving Inequalities, The Absolute Value, and The Principle of Mathematical Induction.
 *   **[Chapter 2: Functions](./Chapter_2_Functions/)** *(Coming Soon)*
     *   Includes Elementary Functions, Bounded Functions, and Operations on Functions.
