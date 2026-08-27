@@ -16,7 +16,8 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
     *   Includes Limits of Sequences, Squeeze Theorem, and Monotonic Sequences.
 *   **[Chapter 4: Limits and Continuity](./Chapter_4_Limits_and_Continuity/Chapter4.pdf)**
 *   *  Includes Limits of a function, Theorems on Limits, Limits at Infinity, Continuity and Theorems on Continuity.
-*   **[Chapter 5: Differentiation](./Chapter_5_Differentiation/)** *(Coming Soon)*
+*   **[Chapter 5: Differentiation](./Chapter_5_Differentiation/Chapter5.pdf)**
+*   *  Includes Differentiation Techniques, The Chain Rule, High Order Derivatives, Logarithmic Differentiation and Implicit Differentiation.
 *   **[Chapter 6: Applications of the Derivative](./Chapter_6_Applications_of_the_Derivative/)** *(Coming Soon)*
 *   **[Chapter 7: Integration](./Chapter_7_Integration/)** *(Coming Soon)*
 
