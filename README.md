@@ -14,7 +14,8 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
     *   Includes Elementary Functions, Bounded Functions, and Operations on Functions.
 *   **[Chapter 3: Sequences](./Chapter_3_Sequences/Chapter3.pdf)** 
     *   Includes Limits of Sequences, Squeeze Theorem, and Monotonic Sequences.
-*   **[Chapter 4: Limits and Continuity](./Chapter_4_Limits_and_Continuity/)** *(Coming Soon)*
+*   **[Chapter 4: Limits and Continuity](./Chapter_4_Limits_and_Continuity/Chapter4.pdf)**
+*   *  Includes Limits of a function, Theorems on limits, Limits at Infinity, Continuity and Theorems on Continuity.
 *   **[Chapter 5: Differentiation](./Chapter_5_Differentiation/)** *(Coming Soon)*
 *   **[Chapter 6: Applications of the Derivative](./Chapter_6_Applications_of_the_Derivative/)** *(Coming Soon)*
 *   **[Chapter 7: Integration](./Chapter_7_Integration/)** *(Coming Soon)*
