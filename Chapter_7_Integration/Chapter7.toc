@@ -1,0 +1,26 @@
+\contentsline {chapter}{\numberline {7}Integration}{3}{}%
+\contentsline {section}{\numberline {7.1}Anti-derivatives}{3}{}%
+\contentsline {section}{\numberline {7.2}Indefinite Integral }{4}{}%
+\contentsline {section}{\numberline {7.3}The Indefinite Integral of a Power}{4}{}%
+\contentsline {section}{\numberline {7.4}Some Ant-Differentiation Formulas}{6}{}%
+\contentsline {section}{\numberline {7.5}$u-$Substitution}{7}{}%
+\contentsline {subsubsection}{The Indefinite Integral of a Power of a Function}{7}{}%
+\contentsline {section}{\numberline {7.6}Sigma Notation}{8}{}%
+\contentsline {subsection}{\numberline {7.6.1}Summation Formulas}{9}{}%
+\contentsline {section}{\numberline {7.7}Area Under a Graph}{10}{}%
+\contentsline {section}{\numberline {7.8}Riemann Sums}{10}{}%
+\contentsline {subsection}{\numberline {7.8.1}The Definite Integral}{13}{}%
+\contentsline {subsection}{\numberline {7.8.2}Properties of the Definite Integral}{13}{}%
+\contentsline {section}{\numberline {7.9}The Fundamental Theorem of Calculus}{14}{}%
+\contentsline {section}{\numberline {7.10}Techniques of Integration}{15}{}%
+\contentsline {subsection}{\numberline {7.10.1}Integration by Parts}{15}{}%
+\contentsline {section}{\numberline {7.11}Using Integration by Parts Repeatedly}{16}{}%
+\contentsline {section}{\numberline {7.12}Evaluating a Definite Integral}{17}{}%
+\contentsline {section}{\numberline {7.13}Reduction Formulas}{17}{}%
+\contentsline {section}{\numberline {7.14}Partial Fractions}{19}{}%
+\contentsline {subsection}{\numberline {7.14.1}Integrating with Repeated Factors}{19}{}%
+\contentsline {subsection}{\numberline {7.14.2}Integrating an Improper Rational Function}{20}{}%
+\contentsline {subsection}{\numberline {7.14.3}Quadratic Factors}{20}{}%
+\contentsline {section}{\numberline {7.15}Integration of Rational Functions of Sine and Cosine}{21}{}%
+\contentsline {section}{\numberline {7.16}Integration of Powers of Trigonometric Functions}{22}{}%
+\contentsline {section}{\numberline {7.17}Tutorial Questions}{25}{}%

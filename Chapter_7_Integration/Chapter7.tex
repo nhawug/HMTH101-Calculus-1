@@ -1,0 +1,815 @@
+\documentclass[titlepage,a4paper,12pt]{report}
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\newcommand\Interval[4]{%
+  \begin{tikzpicture}[text height=1ex]%
+    \draw[<-] (0,0) -- (1,0);
+    \draw[{#3-#4}] (1,0) node[label=below:{#1}] {} -- (2,0) node[label=below:{#2}] {};
+    \draw[->] (2,0) -- (3,0);
+  \end{tikzpicture}
+}
+%\usepackage{fullpage}
+\usepackage{graphicx}
+%\usepackage[cc]{titlepic}
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+\setlength\topmargin{-0.5in}
+\setlength\headheight{0in}
+\setlength\headsep{0in}
+\setlength\textheight{9.5in}
+\setlength\textwidth{7.0in}
+\setlength\oddsidemargin{-0.5in}
+\setlength\evensidemargin{1.0in}
+\setlength\parindent{0.25in}
+\setlength\parskip{0.25in}
+%\begin{titlepage}
+%\usepackage{titlepic}
+%\titlepic{\includegraphics[width=0.2\textwidth]{uz1.png}}
+%
+%\title{\textbf{HMTH111 Calculus 2}}
+%\author{Nhawu. G\\
+%		Department of Mathematics\\
+%		University of Zimbabwe, ZIM}
+%
+%\end{titlepage}
+
+\begin{document}
+\begin{titlepage}
+ 
+\begin{center}
+ 
+ 
+% Upper part of the page
+\includegraphics[width=0.15\textwidth]{uz1.png}\\[1cm]
+ 
+\textsc{\LARGE University of Zimbabwe}\\[1.5cm]
+ 
+\textsc{\Large HMTH101 CALCULUS 1}\\[0.5cm]
+ 
+ 
+% Title
+
+{ \huge \bfseries Calculus of Single Variables}\\[0.4cm]
+ 
+
+ 
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{center} \large
+\emph{Author:}\\
+G. \textsc{Nhawu}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Department:} \\
+\textsc{Mathematics}
+\end{flushright}
+\end{minipage}
+
+\includegraphics[width=0.98\textwidth]{calculus2.png}\\[1cm]
+ \vfill
+ 
+ 
+% Bottom of the page
+{\large \today}
+ 
+\end{center}
+ 
+\end{titlepage}
+
+\tableofcontents
+\setcounter{chapter}{6}
+\chapter{Integration}
+\begin{center}
+	\small{\parbox{18cm}{
+		\begin{raggedright}
+		{\small
+		\textit{If it's your job to eat a frog, it's best to do it first thing in the morning. And if it's your job to eat two frogs, it's best to eat the biggest one first.}
+ }
+ 
+				\vspace{.5cm}\hfill{---Mark Twain}
+		\end{raggedright}
+	}
+} 
+\end{center}
+\section{Anti-derivatives}
+In this chapter we shall see that an equally important problem is :
+\begin{equation*}
+Given~ a~ function~ f,~ find~ a~ function~ whose~ derivative~ is~ the~ same~ as~ f.
+\end{equation*}
+That is, for a given function $f$, we wish to find another function $F$ for which $F'(x)=f(x)$ for all $x$ on some interval.
+\begin{definition}
+A function $F$ is said to be an \textbf{anti-derivative} of a function $f$ if $F'(x)=f(x)$ on some interval.
+\end{definition}
+
+\noindent \textbf{Example:} An anti-derivative of $f(x)=2x$ is $F(x)=x^2$ since $F'(x)=2x$.
+
+\noindent There is always more than one anti-derivative of a function. For instance, in the foregoing example, $F_1(x)=x^2-1$ and $F_2(x)=x^2+10$ are also anti-derivatives of $f(x)=2x$ since $F_1'(x)=F_2'(x)=f(x)$. Indeed, if $F$ is an anti-derivative of a function $f$, then so is $G(x)=F(x)+C$, for any constant $C$. This is a consequence of the fact that 
+\begin{equation*}
+G'(x)=\dfrac{d}{dx}(F(x)+C)=F'(x)+0=F'(x)=f(x).
+\end{equation*}
+Thus, $F(x)+C$ stands for a \textbf{set of functions} of which each member has a derivative equal to $f(x)$.
+\begin{theorem}
+If $G'(x)=F'(x)$ for all $x$ in some interval $[a,b]$, then 
+\begin{equation*}
+G(x)=F(x)+C
+\end{equation*}
+for all $x$ in the interval.
+\end{theorem}
+
+\noindent \textbf{Examples:} (a)\, The anti-derivative of $f(x)=2x$ is $G(x)=x^2+C$.\\
+(b)\, The anti-derivative of $f(x)=2x+5$ is $G(x)=x^2+5x+C$ since $G'(x)=2x+5$.
+
+\section{Indefinite Integral }
+For convenience let's introduce a notation for an anti-derivative of a function. If $F'(x)=f(x)$, we shall represent the most general anti-derivative of $f$ by 
+\begin{equation*}
+\int f(x) dx =F(x) +C.
+\end{equation*}
+The symbol $\displaystyle \int$ is called an \textbf{integral sign}, and the notation $\displaystyle \int f(x)$ is called the \textbf{indefinite integral} of $f(x)$ with respect to $x$. The function $f(x)$ is called the \textbf{integrand}. The process of finding an anti-derivative is called \textbf{anti-differentiation} or \textbf{integration}. The number $C$ is called a \textbf{constant of integration}. Just as $\dfrac{d}{dx} ()$ denotes differentiation with respect to $x$, the symbol $\displaystyle \int ()dx$ denotes integration with respect to $x$.
+
+\section{The Indefinite Integral of a Power}
+When differentiating the power $x^n$, we multiply by the exponent $n$ and decrease the exponent by $1$. To find an anti-derivative of $x^n$, the reverse of the differentiation rule would be : \textit{Increase the exponent by $1$ and divide by the new exponent $n+1$}.
+
+\noindent If $n$ is a rational number, then for $n\neq -1$
+\begin{equation*}
+\int x^n dx =\dfrac{x^{n+1}}{n+1}+C.
+\end{equation*}
+\begin{proof}
+Notice that 
+\begin{equation*}
+\dfrac{d}{dx}\left(\dfrac{x^{n+1}}{n+1}+C\right) =(n+1)\dfrac{x^{(n+1)-1}}{n+1}+0 =x^n.
+\end{equation*}
+\end{proof}
+\noindent \textbf{Example:} Evaluate (a)\, $\displaystyle \int x^6\, dx$ \quad (b)\, $\displaystyle \int \dfrac{1}{x^5}\,  dx$.
+
+\noindent \textbf{Solution:} \\
+(a)\, $\displaystyle \int x^6 \, dx =\dfrac{x^7}{7} +C$.\\
+(b)\, By writing $\dfrac{1}{x^5}$ as $x^{-5}$, we have $\displaystyle \int x^{-5}\, dx=\dfrac{x^{-4}}{-4}+C =-\dfrac{1}{4x^4}+C$.
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \sqrt{x}\,  dx$.
+
+\noindent \textbf{Solution:} We first write $\displaystyle \int \sqrt{x}\, dx =\int x^{\frac{1}{2}}dx$ and therefore 
+\begin{equation*}
+\int x^{\frac{1}{2}}dx =\dfrac{x^{\frac{3}{2}}}{\frac{3}{2}} +C=\frac{2}{3}x^{\frac{3}{2}} +C.
+\end{equation*}
+
+\noindent The following property of indefinite integrals is an immediate consequence of the fact that the derivative of a sum is the sum of derivatives.
+
+\begin{theorem}
+If $F'(x)=f(x)$ and $G'(x)=g(x)$, then 
+\begin{equation*}
+\int [f(x) \pm g(x)]dx=\int f(x)dx \pm \int g(x)dx =F(x) \pm G(x) +C.
+\end{equation*}
+\end{theorem}
+\noindent \textbf{Example:} Evaluate $\displaystyle \int (x^{-\frac{1}{2}}+x^4)dx$.
+
+\noindent \textbf{Solution:} We can write 
+\begin{equation*}
+\int (x^{-\frac{1}{2}}+x^4)dx =\int x^{-\frac{1}{2}}dx +\int x^4 dx =\frac{x^{\frac{1}{2}}}{\frac{1}{2}}+\frac{x^5}{5}+C=2x^{\frac{1}{2}}+\frac{x^5}{5}+C.
+\end{equation*} 
+\begin{theorem}
+If $F'(x)=f(x)$, then 
+\begin{equation*}
+\int kf(x)dx=k\int f(x)dx
+\end{equation*}
+for any constant $k$.
+\end{theorem}
+
+\noindent The anti-derivative, or indefinite integral, of any finite sum can be obtained by integrating each term.
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \left(4x-2x^{-\frac{1}{3}}+\frac{5}{x^2} \right)dx$.
+
+\noindent \textbf{Solution:} It follows that 
+\begin{eqnarray*}
+\int \left(4x-2x^{-\frac{1}{3}}+\frac{5}{x^2} \right)dx &=& 4\int x dx-2\int x^{-\frac{1}{3}}dx +5\int x^{-2}dx\\
+&=& 4\cdot \dfrac{x^2}{2}-2\cdot \dfrac{x^{\frac{2}{3}}}{\frac{2}{3}}+5\cdot \dfrac{x^{-1}}{-1}+C\\
+&=&2x^2 -3x^{\frac{2}{3}}-5x^{-1} +C.
+\end{eqnarray*}
+\section{Some Ant-Differentiation Formulas}
+\begin{enumerate}
+\item $\displaystyle \int cf(x)dx=c\int f(x)dx $.
+\item $\displaystyle \int [f(x)\pm g(x)]=\displaystyle \int f(x)dx \pm \displaystyle \int g(x)dx$.
+\item $\displaystyle \int x^n dx =\dfrac{1}{n+1} x^{n+1} + C$ for $n\neq -1$.
+\item $\displaystyle \int adx =ax +C $.
+\item $\displaystyle \int \cos x dx =\sin x +C$.
+\item $\displaystyle \int \sin x dx =-\cos x +C$.
+\item $\displaystyle \int\sec ^2 x dx =\tan x +C$.
+\item $\displaystyle \int e^x dx =e^x +C$.
+\item $\displaystyle \int \dfrac{1}{x} dx =\ln |x| +C$.
+\item $\displaystyle \int \dfrac{1}{\sqrt{1-x^2}}dx =\sin ^{-1} x +C$.
+\item $\displaystyle \int \dfrac{1}{1+x^2}dx= \tan ^{-1} x +C$.
+\end{enumerate}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \left(\frac{5}{x}-2\sqrt[3]{x^2}\right)dx$.
+
+\noindent \textbf{Solution:} We may write 
+\begin{eqnarray*}
+\int \left(\frac{5}{x}-2\sqrt[3]{x^2}\right)dx &=& 5\int \dfrac{1}{x} dx -2\int x^{\frac{2}{3}}dx\\
+&=& 5\ln |x| -2\dfrac{1}{\frac{5}{3}}x^{\frac{5}{3}} +C\\
+&=& 5\ln |x| -\frac{6}{5}x^{\frac{5}{3}} +C.
+\end{eqnarray*}
+\section{$u-$Substitution}
+\subsubsection{The Indefinite Integral of a Power of a Function}
+\begin{theorem}
+If $F$ is an anti-derivative of $f$, then 
+\begin{equation*}
+\int f(g(x))g'(x)dx=F(g(x))+C.
+\end{equation*}
+\end{theorem}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \dfrac{x}{(4x^2+3)^6} dx$.
+
+\noindent \textbf{Solution:} Let us rewrite the integral as 
+\begin{equation*}
+\int (4x^2+3)^{-6} xdx
+\end{equation*}
+and make the identifications 
+\begin{equation*}
+u=4x^2+3 \quad \hbox{and} \quad du=8xdx.
+\end{equation*}
+\begin{eqnarray*}
+\int (4x^2+3)^{-6} xdx  &=&\frac{1}{8} \int \overbrace{(4x^2+3)^{-6}}^{u^{-6}} \overbrace{8x dx}^{du}\\
+&=&\frac{1}{8}\int u^{-6} du \\
+&=& \frac{1}{8} \cdot \frac{u^{-5}}{-5}+C\\
+&=& -\frac{1}{40}(4x^2+3)^{-5} +C.
+\end{eqnarray*}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int x(x^2+2)^3 dx$.
+
+\noindent \textbf{Solution:} If $u=x^2+2$ then $du=2xdx$. Thus, 
+\begin{eqnarray*}
+\int x(x^2+2)^3 dx &=& \frac{1}{2} \int \overbrace{(x^2+2)^3}^{u^3} \overbrace{2xdx}^{du}\\
+&=& \frac{1}{2}\int u^3 du\\
+&=& \frac{1}{2}\cdot \frac{u^4}{4} +C\\
+&=& \frac{1}{8} (x^2+2)^4 +C.
+\end{eqnarray*}
+
+\noindent \textbf{You Try It:} Evaluate $\displaystyle \sqrt[3]{(7-2x^3)^4}x^2 dx$.
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \sin 10x\, dx$.
+
+\noindent \textbf{Solution:} If $u=10x$, we then need $du=10dx$. Accordingly, we write
+\begin{eqnarray*}
+\int \sin 10x\, dx &=& \frac{1}{10} \int \sin 10x (10dx)\\
+&=& \frac{1}{10} \int \sin u \,  du\\
+&=& \frac{1}{10} (-\cos u) +C\\
+&=& -\frac{1}{10}\cos 10x +C.
+\end{eqnarray*}
+
+\noindent \textbf{You Try It:} Evaluate $\displaystyle \int \sec ^2 (1-4x)\, dx$.
+
+\section{Sigma Notation}
+It is helpful to introduce a special notation that enables us to write an indicated sum of constants such as 
+$1+2+3+\cdots +n, \, 2^2+4^2+6^2 +\cdots + (2n)^2$ and $\dfrac{1}{3} +\dfrac{1}{4}+\dfrac{1}{5}+\cdots +\dfrac{1}{2n-1}$ in a concise manner.
+
+\noindent Let $a_k$ be a real number depending on the integer $k$. We denote the sum 
+\begin{equation*}
+a_1+a_2+a_3+\cdots + a_n
+\end{equation*}
+by the symbol
+\begin{equation*}
+\sum _{k=1}^n a_k.
+\end{equation*}
+Since $\sum$ is the capital Greek letter sigma, it is called \textbf{sigma notation} or \textbf{summation notation}. The variable $k$ is called the \textbf{index of summation}. Thus, $\displaystyle \sum _{k=1}^n a_k$ is the sum of all numbers of the form $a_k$ as $k$ takes on the successive values $k=1, k=2, \cdots$, and concludes with $k=n$.
+
+\noindent \textbf{Examples:} (a)\, $\displaystyle \sum _{k=1}^5 (3k-1)=[3(1)-1]+[3(2)-1]+[3(3)-1]+[3(4)-1]+[3(5)-1]=2+5+8+11+14$.\\
+(b)\, $\displaystyle \sum _{k=1}^4 \dfrac{1}{(k+1)^2}=\dfrac{1}{2^2}+\dfrac{1}{3^2}+\dfrac{1}{4^2}+\dfrac{1}{5^2}$.\\
+(c)\, $\displaystyle \sum _{k=1}^{100}k^3=1^3+2^3+3^3+\cdots +98^3+99^3+100^3$.
+
+\noindent The index of summation is often called a \textbf{dummy variable} since the symbol itself is not important, it is the successive integer values of the index and the corresponding sum that are important. In general, 
+\begin{equation*}
+\sum _{k=1}^n a_k =\sum _{i=1}^n a_i =\sum _{j=1}^n a_j =\sum _{m=1}^n a_m
+\end{equation*}
+and so on.
+\subsection{Summation Formulas}
+The number $n$ is a positive integer, then 
+\begin{enumerate}
+\item $\displaystyle \sum _{k=1}^n c =nc$.
+\item $\displaystyle \sum _{k=1}^n k =\dfrac{n(n+1)}{2}$.
+\item $\displaystyle \sum _{k=1}^n k^2 =\dfrac{n(n+1)(2n+1)}{6}$.
+\item $\displaystyle \sum _{k=1}^n k^3 =\dfrac{n^2(n+1)^2}{4}$.
+\item $\displaystyle \sum _{k=1}^n k^4 =\dfrac{n(n+1)(6n^3+9n^2+n-1)}{30}$.
+\end{enumerate}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \sum _{k=1}^{10}(k+2)^3$.
+
+\noindent \textbf{Solution:} By the Binomial Theorem, we can write as 
+\begin{eqnarray*}
+\sum _{k=1}^{10}(k+2)^3 &=& \sum _{k=1}^{10}(k^3+6k^2+12k+8)\\
+&=& \sum _{k=1}^{10} k^3 +6\sum _{k=1}^{10} k^2 +12\sum _{k=1}^{10} k +\sum _{k=1}^{10} 8.
+\end{eqnarray*}
+With $n=10$, it follows from the summation formulas, that 
+\begin{eqnarray*}
+\sum _{k=1}^{10}(k+2)^3 &=& \dfrac{10^2{11}^2}{4}+6\dfrac{10(11)(21)}{6}+12\dfrac{10(11)}{2}+10\cdot 8\\
+&=& 3025 +2310+660+80=6075.
+\end{eqnarray*}
+\section{Area Under a Graph}
+As the derivative is motivated by the geometric problem of constructing a tangent to a curve, the historical problem leading to the definition of a definite integral is the problem of finding area. Specifically, we are interested in finding the area $A$ of a region bounded between the $x-$axis, the graph of a non-negative function $y=f(x)$ defined on some interval $[a,b]$ and 
+\begin{itemize}
+\item[(i)] the vertical lines $x=a$ and $x=b$.
+\item[(ii)] the $x-$intercepts of the graph.
+\end{itemize}
+\begin{center}
+ \includegraphics[width=0.5\textwidth]{area.png}\\[1cm]
+  \end{center}
+\section{Riemann Sums}
+Thinking integral as area, you can approximate the value of an integral by approximating the area. A \textbf{Riemann Sum} is a sum of areas of rectangles. To estimate $\displaystyle \int _a^b f(x)\, dx$, where $a<b$. 
+\begin{center}
+ \includegraphics[width=0.5\textwidth]{area1.png}\\[1cm]
+  \end{center}
+\noindent First, divide the interval $[a,b]$ into $n$ subintervals, using $x_0, x_1, x_2, \dots , x_n$ as endpoints for the subintervals, 
+\begin{equation*}
+a=x_0<x_1<\cdots <x_{n-1}<x_n=b.
+\end{equation*}
+The subintervals are then 
+\begin{equation*}
+[x_0, x_1], [x_1, x_2], \cdots , [x_{n-1}, x_n].
+\end{equation*} 
+For simplicity, let the subintervals have the same length, $\Delta x =\dfrac{b-a}{n}$. You then have $x_i=a+i\Delta x$. Choose a point $c$ in each subinterval and construct a rectangle above the subinterval with height $f(c)$. For simplicity, above the $i$th subinterval $[x_{i-1}, x_i]$ make the height of the rectangle $f(x_i)$. The sum of the area of the rectangles is an approximation to $\displaystyle \int _a^b f(x)\, dx$. The $i$th rectangle has width $\Delta x$ and height $f(x_i)$, hence the area $A_i=f(x_i)\Delta x$. Thus :
+\begin{eqnarray*}
+\int _a^b f(x)\, dx &\approx &  A_1 +A_2 +\cdots +A_n \\
+&=& f(x_1)\Delta x +f(x_2)\Delta x +\cdots +f(x_n)\Delta x \\
+&=& \sum _{i=1}^n f(x_i)\Delta x.
+\end{eqnarray*}
+This is the Riemann Sum for the integral $\displaystyle \int _a^b f(x)\, dx$. In general, if you increase $n$, you will improve your approximation.
+
+\noindent \textbf{Example:} Find the area of the region bounded by the graphs of $f(x)=2x, \, x=0, \, x=1$ and the $x$-axis by calculating the limit of the Riemann Sums.
+
+\noindent \textbf{Solution:} First divide the interval $[0,1]$ into $n$ subintervals of equal length, 
+\begin{equation*}
+\Delta x =\dfrac{b-a}{n}=\dfrac{1-0}{n}=\dfrac{1}{n}.
+\end{equation*}
+Therefore, 
+\begin{equation*}
+x_i=a+i\Delta x =0+i\cdot \dfrac{1}{n}=\dfrac{i}{n}.
+\end{equation*}
+The $n$th Riemann Sum is 
+\begin{eqnarray*}
+\sum _{i=1}^n f(x_i)\Delta x &=& \sum _{i=1}^n f\left(\dfrac{i}{n}\right) \Delta x \\
+&=& \sum _{i=1}^n 2\left(\dfrac{i}{n}\right) \Delta x =\sum _{i=1}^n 2\left(\dfrac{i}{n}\right)\left(\dfrac{1}{n}\right)\\
+&=&\sum _{i=1}^n \dfrac{2}{n^2}i
+\end{eqnarray*}
+Inside the summation, $\dfrac{2}{n^2}$ does not involve $i$, and so you can pull it outside the summation.
+\begin{eqnarray*}
+\sum _{i=1}^n \dfrac{2}{n^2}i &=& \dfrac{2}{n^2}\sum _{i=1}^n i \\
+&=& \dfrac{2}{n^2}\left[\dfrac{n(n+1)}{2}\right] =\dfrac{2n^2+2n}{2n^2}\\
+&=& 1+\dfrac{1}{n}.
+\end{eqnarray*}
+Finally, you can find the limit of the Riemann Sums :
+\begin{equation*}
+\lim _{n\rightarrow \infty} \sum _{i=1}^n f(x_i)\Delta x =\lim _{n\rightarrow \infty} \left(1+\dfrac{1}{n}\right)=1.
+\end{equation*}
+
+
+\noindent \textbf{Example:} Find the area of the region bounded by the graphs of $f(x)=(x-1)^2+2, \, x=-1, \, x=2$ and the $x$-axis by finding the limit of the Riemann Sums.
+
+\noindent \textbf{Solution:} Divide $[-1,2]$ as follows $\Delta x =\dfrac{2-(-1)}{n}=\dfrac{3}{n}$, then $x_i=a+i\Delta x =-1+\dfrac{3i}{n}$. Then,  the $n$th Riemann Sum is \\
+\begin{eqnarray*}
+\sum _{i=1}^n f(x_i)\Delta x &=&\sum _{i=1}^n f\left(-1+\dfrac{3i}{n}\right) \cdot \dfrac{3}{n} \\
+&=& \sum _{i=1}^n \left[\left(-1+\dfrac{3i}{n}-1\right)^2+2\right]\cdot \dfrac{3}{n} \\
+&=& \sum _{i=1}^n  \left[\left(\dfrac{3i}{n}-2\right)^2+2\right]\cdot \dfrac{3}{n} \\
+&=& \sum _{i=1}^n \left[\dfrac{9i^2}{n^2}-\dfrac{12i}{n}+4+2\right] \cdot \dfrac{3}{n} 
+\end{eqnarray*}
+\begin{eqnarray*}
+&=& \sum _{i=1}^n \left[\dfrac{27}{n^3}i^2-\dfrac{36}{n^2}i+\dfrac{18}{n}\right]\\
+&=& \dfrac{27}{n^3}\sum _{i=1}^n i^2-\dfrac{36}{n^2}\sum _{i=1}^n i+\dfrac{18}{n}\sum _{i=1}^n 1\\
+&=& \dfrac{27}{n^3} \left[\dfrac{n(n+1)(2n+1)}{6}\right]-\dfrac{36}{n^2}\left[\dfrac{n(n+1)}{2}\right]+\dfrac{18}{n}(n)\\
+&=&\dfrac{9(n+1)(2n+1)}{2n^2}-\dfrac{18(n+1)}{n}+18.
+\end{eqnarray*}
+The area is the limit of the Riemann Sum 
+\begin{equation*}
+\lim _{n\rightarrow \infty} \sum _{i=1}^n f(x_i)\Delta x =\lim _{n\rightarrow \infty} \left[ \dfrac{9(n+1)(2n+1)}{2n^2}-\dfrac{18(n+1)}{n}+18\right] =9-18-18 =9.
+\end{equation*}
+
+\noindent \textbf{You Try It:} Find the area of the function $f(x)=x$ on $[0,1]$ by finding the limit of the Riemann Sums.
+\subsection{The Definite Integral}
+The geometric problems that motivated the development of the integral calculus (determination of
+lengths, areas, and volumes) arose in the ancient civilizations of Northern Africa. Where solutions were
+found, they related to concrete problems such as the measurement of a quantity of grain. Greek
+philosophers took a more abstract approach. In fact, Eudoxus (around 400 B.C.) and Archimedes
+(250 B.C.) formulated ideas of integration as we know it today.
+Integral calculus developed independently, and without an obvious connection to differential
+calculus. The calculus became a ‘‘whole’’ in the last part of the seventeenth century when Isaac Barrow,
+Isaac Newton, and Gottfried Wilhelm Leibniz (with help from others) discovered that the integral of a
+function could be found by asking what was differentiated to obtain that function.
+
+\begin{definition}
+Let $f$ be a function defined on a closed interval $[a,b]$. Then the \textbf{definite integral} of $f$ from $a$ to $b$, denoted by $\displaystyle \int _{a}^b f(x)\, dx$, is defined to be 
+\begin{equation*}
+\int _{a}^b f(x)\, dx =\lim _{n\rightarrow \infty}\sum _{i=1}^n f(x_i)\Delta x.
+\end{equation*}
+\end{definition}
+\noindent The numbers $a$ and $b$ are called the \textbf{lower} and \textbf{upper limits of integration}, respectively. If the limit exists, the function $f$ is said to be \textbf{integrable} on the interval. 
+\subsection{Properties of the Definite Integral}
+The following two definitions prove to be useful when working with definite integrals.
+\begin{theorem}
+If $f(a)$ exists, then 
+\begin{equation*}
+\int _a^a f(x)dx=0.
+\end{equation*}
+\end{theorem}
+\begin{theorem}
+If $f$ is integrable on $[a,b]$, then 
+\begin{equation*}
+\int _b^a f(x)dx=-\int _a^b f(x)dx.
+\end{equation*}
+\end{theorem}
+\noindent \textbf{Example:} By definition 
+\begin{equation*}
+\int _1^1 (x^3+3x)dx=0.
+\end{equation*}
+\begin{theorem}
+Let $f$ and $g$ be integrable functions on $[a,b]$. Then, 
+\begin{itemize}
+\item[(i)] $\displaystyle \int _{a}^b kf(x)\, dx=k\int _{a}^b f(x)\, dx$ where $k$ is any constant.
+\item[(ii)] $\displaystyle \int _{a}^b [ f(x) \pm g(x)]\, dx=\int _{a}^b f(x)\, dx \pm \int _{a}^b g(x)\, dx$.
+\item[(iii)] $\displaystyle \int _{a}^b f(x)\, dx=\int _{a}^c f(x)\, dx +\int _{c}^b f(x)\, dx$, where $c$ is any number in $[a,b]$.
+\end{itemize}
+\end{theorem}
+\noindent The independent variable $x$ in a definite integral is called a \textbf{dummy variable} of integration. The value of the integral does not depend on the symbol used. In other words, 
+\begin{equation*}
+\int _{a}^b f(x)\, dx =\int _{a}^b f(r)\, dr =\int _{a}^b f(s)\, ds =\int _{a}^b f(t)\, dt
+\end{equation*}
+and so on.
+\begin{theorem}
+For any constant $k$, 
+\begin{equation*}
+\int _{a}^b k\, dx =k\int _{a}^b dx=k(b-a).
+\end{equation*}
+\end{theorem}
+\begin{theorem}
+Let $f$ be integrable on $[a,b]$ and $f(x)\geq 0$ for all $x$ in $[a,b]$, then 
+\begin{equation*}
+\int _{a}^b f(x)\, dx\geq 0.
+\end{equation*}
+\end{theorem}
+\section{The Fundamental Theorem of Calculus}
+In this theorem we shall see that the concept of an anti-derivative of a continuous function provides the bridge between the differential calculus and the integral calculus. 
+\begin{theorem}
+Let $f$ be continuous on $[a,b]$ and let $F$ be any function for which $F'(x)=f(x)$. Then 
+\begin{equation*}
+\int _{a}^b f(x)\, dx=F(b)-F(a).
+\end{equation*}
+\end{theorem}
+\noindent The difference is usually written 
+\begin{equation*}
+F(x)\biggl|_{a}^b,
+\end{equation*} 
+that is, 
+\begin{equation*}
+\underbrace{\int _a^b f(x)\, dx}_{\hbox{definite integral}} =\underbrace{\int f(x)\, dx\biggl|_a^b}_{\hbox{indefinite integral}} =F(x)\biggl|_{a}^b.
+\end{equation*}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int _{1}^3 x\, dx$.
+
+\noindent \textbf{Solution:} An anti-derivative  of $f(x)=x$ is $F(x)=\dfrac{x^2}{2}$. Consequently, 
+\begin{equation*}
+\int _{1}^3 x\, dx =\dfrac{x^2}{2}\biggl|_{1}^3=\dfrac{9}{2}-\dfrac{1}{2}=4.
+\end{equation*}
+\section{Techniques of Integration}
+\subsection{Integration by Parts}
+Useful for integrands involving products of algebraic and exponential or logarithmic functions, such as $\displaystyle \int x^2e^x\, dx$ and $\displaystyle \int x\ln x\, dx$. This is the inverse operation of differentiating a product. If $u$ and $v$ are functions of $x$, then 
+\begin{equation*}
+\dfrac{d}{dx}(uv)=u\dfrac{dv}{dx}+v\dfrac{du}{dx}.
+\end{equation*}
+Integrate both sides, if $\dfrac{du}{dx}$ and $\dfrac{dv}{dx}$ are continuous, then 
+\begin{eqnarray*}
+uv &=& \int u\dfrac{dv}{dx}\, dx +\int v\dfrac{du}{dx}\, dx \\
+\int u \dfrac{dv}{dx}\, dx &=& uv -\int v\dfrac{du}{dx}\, dx \\
+\int u \, dv &=& uv -\int v\, du.
+\end{eqnarray*}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int xe^x \, dx$.
+
+\noindent \textbf{Solution:} Let $u=x, \, du=dx$ and $dv=e^x\, dx\Rightarrow v=\displaystyle \int dv=\int e^x\, dx=e^x$. Then, 
+\begin{equation*}
+\int xe^x \, dx=xe^x-e^x+C.
+\end{equation*}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int x^2 \ln x\, dx$.
+
+\noindent \textbf{Solution:} $x^2$ is more easily integrated than $\ln x$. So choose $dv=x^2\, dx$. Then, 
+\begin{equation*}
+dv=x^2\, dx \Rightarrow v=\int dv =\int x^2 \, dx =\dfrac{x^3}{3}.
+\end{equation*}
+and $u=\ln x \Rightarrow du=\dfrac{1}{x}\, dx$. Therefore, 
+\begin{eqnarray*}
+\int x^2 \ln x\, dx &=& \dfrac{x^3}{3}\ln x -\int \left(\dfrac{x^3}{3}\right)\left(\dfrac{1}{x}\right)\, dx\\
+&=& \dfrac{x^3}{3}\ln x -\dfrac{1}{3}\int x^2\, dx \\
+&=&  \dfrac{x^3}{3}\ln x -\dfrac{x^3}{9}+C.
+\end{eqnarray*}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \ln x \, dx$.
+
+\noindent \textbf{Solution:} Choose $dv=dx \Rightarrow v=\displaystyle \int dv=\int dx=x$ and $u=\ln x\Rightarrow du=\dfrac{1}{x}\, dx$, therefore
+\begin{eqnarray*}
+\int \ln x\, dx &=& x\ln x -\int x\cdot \dfrac{1}{x}\, dx \\
+&=& x\ln x -\int dx\\
+&=&x\ln x -x+C.
+\end{eqnarray*}
+
+\noindent \textbf{You Try It:} Evaluate $\displaystyle \int x\tan ^{-1} x \, dx$.
+
+\section{Using Integration by Parts Repeatedly}
+\textbf{Example:} Evaluate $\displaystyle \int x^2e^x\, dx$.
+
+\noindent \textbf{Solution:} Notice that the derivative of $x^2$ becomes simpler, whereas the derivative of $e^x$ does not. So you should let $u=x^2$ and $dv=e^x\, dx$. So 
+\begin{eqnarray*}
+dv=e^x\, dx  &\Rightarrow & v=\int dv=\int e^x\, dx =e^x\\
+u=x^2 &\Rightarrow & du=2x\, dx.
+\end{eqnarray*}
+Integrating by parts one time we get, 
+\begin{equation*}
+\int x^2e^x\, dx =x^2e^x-\int 2xe^x\, dx.
+\end{equation*}
+Apply integration by parts a second time, where 
+\begin{eqnarray*}
+dv=e^x \, dx &\Rightarrow & v=\int dv =\int e^x \, dx =e^x\\
+u=2x &\Rightarrow & du=2\, dx.
+\end{eqnarray*}
+Then, 
+\begin{eqnarray*}
+\int x^2e^x\, dx &=& x^2e^x-\int 2xe^x\, dx\\
+&=& x^2e^x-\left(2xe^x-\int 2e^x\, dx\right)\\
+&=& x^2e^x-2xe^x+2e^x+C\\
+&=& e^x(x^2-2x+2)+C.
+\end{eqnarray*}
+\section{Evaluating a Definite Integral}
+\textbf{Example:} Evaluate $\displaystyle \int _{1}^e \ln x \, dx$.
+
+\noindent \textbf{Solution:} 
+\begin{eqnarray*}
+ \int _{1}^e \ln x \, dx &=& (x\ln x -x)\biggl |_{1}^e \\
+ &=& (e\ln e -e)-(1\cdot \ln 1 -1)\\
+ &=& (e-e)-(0-1)\\
+ &=& 1.
+\end{eqnarray*}
+\section{Reduction Formulas}
+These are formulas in which a given integral is expressed in terms of similar integrals of simpler form. 
+
+\noindent \textbf{Example:} Let $n$ be a positive integer. Use integration  by parts to derive the reduction formula 
+\begin{equation*}
+\int x^n e^x\, dx =x^ne^x-n\int x^{n-1}e^x\, dx +C.
+\end{equation*}
+
+\noindent \textbf{Solution:} Let $u=x^n, \, dv=e^x\, dx$. Then $du=nx^{n-1}$, $v=\displaystyle \int dv=\int e^x \, dx=e^x$. So 
+\begin{eqnarray*}
+\int x^ne^x\, dx &=&x^ne^x-\int e^x(nx^{n-1})\, dx \\
+&=& x^ne^x-n\int x^{n-1}e^x\, dx +C.
+\end{eqnarray*} 
+To illustrate the use of the reduction formula we calculate $\displaystyle \int x^ne^x\, dx$ for $n=1,2$.
+\begin{eqnarray*}
+n=1 &:& \int xe^x\, dx =xe^x-\int e^x\, dx=xe^x-e^x+C.\\
+n=2 &:& \int x^2e^x\, dx =x^2e^x-2\int xe^x\, dx =x^2e^x-2xe^x+2e^x+C.
+\end{eqnarray*}
+
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \sin ^n x \, dx$.
+
+\noindent \textbf{Solution:} Rewrite as $\displaystyle \int \sin ^n x\, dx =\int \sin ^{n-1}x \sin x\, dx$. \\Then $u=\sin ^{n-1}x \Rightarrow du=(n-1)\sin ^{n-2}x \cos x\, dx$ and $dv=\sin x \Rightarrow \\ v=\displaystyle \int dv=\int \sin x \, dx =-\cos x$. Then , 
+\begin{eqnarray*}
+\int \sin ^n x \, dx &=&-\sin ^{n-1}x \cos x +(n-1)\int \sin ^{n-2}x \cos x \cos x \, dx\\
+&=&-\sin ^{n-1}x \cos x +(n-1)\int \sin ^{n-2}x \cos ^2 x\, dx\\
+&=&-\sin ^{n-1}x \cos x+(n-1)\int \sin ^{n-2}x (1-\sin ^2 x)\, dx\\
+&=&-\sin ^{n-1}x \cos x+(n-1)\left[\int \sin ^{n-2}x \, dx -\sin ^n x \, dx\right]\\
+\int \sin ^n x \, dx +(n-1)\int \sin ^n x \, dx &=&-\sin ^{n-1}x \cos x +(n-1)\int \sin ^{n-2}x \, dx\\
+n\int \sin ^n x \, dx &=&-\sin ^{n-1}x \cos x +(n-1)\int \sin ^{n-2}x \, dx \\
+\int \sin ^n x \, dx &=&- \dfrac{\sin ^{n-1}x\cos x}{n} +\dfrac{n-1}{n}\int \sin ^{n-2}x\, dx.
+\end{eqnarray*}
+\section{Partial Fractions}
+This technique involves the decomposition of a rational function into the sum of two or more simpler rational functions. We will consider rational functions (quotients of polynomials) in which the numerator has a lower degree than the denominator. If this condition is not meet, we first carry out long division process, dividing the denominator into the  numerator, until we reduce the problem to an equivalent one involving a fraction in which the numerator has a lower degree than the denominator. 
+
+\noindent \textbf{Example:} $\dfrac{x+7}{x^2-x-6}=\dfrac{2}{x-3}-\dfrac{1}{x+2}$, then 
+\begin{eqnarray*}
+\int \dfrac{x+7}{x^2-x-6}\, dx &=&\int \left(\dfrac{2}{x-3}-\dfrac{1}{x+2}\right)\, dx \\
+&=& 2\int \dfrac{1}{x-3}\, dx -\int \dfrac{1}{x+2}\, dx\\
+&=& 2\ln |x-3|-\ln |x+2| +C.
+\end{eqnarray*}
+
+\noindent \textbf{You Try It:} Evaluate $\displaystyle \int \dfrac{2x+1}{(x-1)(x+3)}\, dx$.
+\subsection{Integrating with Repeated Factors}
+ \textbf{Example:} Find $\displaystyle \int \dfrac{5x^2+20x+6}{x^3+2x^2+x}\, dx$.
+ 
+ \noindent \textbf{Solution:} Factorise the denominator as $x(x+1)^2$. Then write the partial decomposition as 
+ \begin{equation*}
+ \dfrac{5x^2+20x+6}{x(x+1)^2}=\dfrac{A}{x}+\dfrac{B}{x+1} +\dfrac{C}{(x+1)^2}.
+ \end{equation*}
+ Substituting we get, $A=6, \, B=-1, \, C=9$, then 
+ \begin{eqnarray*}
+ \int \dfrac{5x^2+20x+6}{x^3+2x^2+x}\, dx &=& \int \dfrac{6}{x}\, dx -\int \dfrac{1}{x+1}\, dx +\int \dfrac{9}{(x+1)^2}\, dx\\
+ &=& 6\ln |x|-\ln |x+1|+\dfrac{9(x+1)^{-1}}{-1} +C\\
+ &=& \ln \left|\dfrac{x^6}{x+1}\right|-\dfrac{9}{x+1}+C.
+ \end{eqnarray*}
+ 
+ \noindent \textbf{You Try It:} Evaluate $\displaystyle \int \dfrac{6x-1}{x^3(2x-1)}\, dx$.
+ \subsection{Integrating an Improper Rational Function}
+ \textbf{Example:} Find $\displaystyle \int \dfrac{x^5+x-1}{x^4-x^3}\, dx$.
+ 
+ \noindent \textbf{Solution:} This rational is improper, its numerator has a degree greater than that of its denominator. Carrying out long division, we have
+ \begin{equation*}
+\dfrac{x^5+x-1}{x^4-x^3} =x+1 +\dfrac{x^3+x-1}{x^4-x^3}.
+ \end{equation*}
+ Now, applying partial fraction decomposition produces
+ \begin{equation*}
+ \dfrac{x^3+x-1}{x^3(x-1)} =\dfrac{A}{x}+\dfrac{B}{x^2}+\dfrac{C}{x^3}+\dfrac{D}{x-1}.
+ \end{equation*}
+ We see that $A=0, \, B=0, \, C=1$ and $D=1$. So now we can integrate, 
+ \begin{eqnarray*}
+ \int \dfrac{x^5+x-1}{x^4-x^3}\, dx &=& \int \left(x+1+\dfrac{x^3+x-1}{x^4-x^3}\right)\, dx\\
+ &=& \int \left(x+1+\dfrac{1}{x^3}+\dfrac{1}{x-1}\right)\, dx\\
+ &=& \dfrac{x^2}{2}+x-\dfrac{1}{2x^2}+\ln |x-1|+C.
+ \end{eqnarray*}
+ 
+ \noindent \textbf{You Try It:} Evaluate $\displaystyle \int \dfrac{x^3-2x}{x^2+3x+2}\, dx$.
+ \subsection{Quadratic Factors}
+ \textbf{Example:} Find $\displaystyle \int \dfrac{dx}{x^2-4x+5}$.
+ 
+ \noindent \textbf{Solution:} Here we cannot find real factors, but we can complete the square, 
+ \begin{equation*}
+ x^2-4x+5=(x-2)^2+1, 
+ \end{equation*}
+ therefore 
+ \begin{equation*}
+ \int \dfrac{dx}{x^2-4x+5} =\int \dfrac{dx}{(x-2)^2+1}=\tan ^{-1} (x-2) +C.
+ \end{equation*}
+ 
+ 
+ \noindent \textbf{Example:} Find $\displaystyle \int \dfrac{(x+3)dx}{x^2-4x+5}$.
+ 
+ \noindent \textbf{Solution:} Completing the square, $\dfrac{x+3}{x^2-4x+5}=\dfrac{x+3}{(x-2)^2+1}$. Now since $x+3=x-2+5$, we have 
+ \begin{eqnarray*}
+ \int \dfrac{(x+3)dx}{x^2-4x+5} &=&\int \dfrac{(x-2+5)\, dx}{(x-2)^2+1}\\
+ &=& \int \dfrac{(x-2)\, dx}{(x-2)^2+1} +\int \dfrac{5\, dx}{(x-2)^2+1}\\
+ &=& \dfrac{1}{2}\ln ((x-2)^2+1)+5\tan ^{-1} (x-2)+C.
+ \end{eqnarray*}
+ 
+ \noindent \textbf{Example:} Find $\displaystyle \int \dfrac{(x+1)\, dx}{x(x^2+1)}$.
+ 
+ \noindent \textbf{Solution:} Decompose into partial fractions, 
+ \begin{equation*}
+ \dfrac{x+1}{x(x^2+1)}=\dfrac{A}{x}+\dfrac{B+Cx}{x^2+1}.
+ \end{equation*}
+ Then $A=1, \, B=1, \, C=-1$, and our integral is 
+ \begin{eqnarray*}
+ \int \dfrac{(x+1)\, dx}{x(x^2+1)} &=& \int \dfrac{1}{x}\, dx +\int \dfrac{dx}{x^2+1}-\int \dfrac{x\, dx}{x^2+1}\\
+ &=& \ln |x| +\tan ^{-1} x-\dfrac{1}{2}\ln (x^2+1)+C.
+ \end{eqnarray*}
+ 
+ \noindent \textbf{You Try It:} Evaluate $\displaystyle \int \dfrac{4x}{(x^2+1)(x^2+2x+3)}\, dx$.
+ \section{Integration of Rational Functions of Sine and Cosine}
+ Integrals of rational expressions that involve $\sin x$ and $\cos x$ can be reduced to integrals of quotients of polynomials by means of the substitution 
+ \begin{equation*}
+ t=\tan \left(\dfrac{x}{2}\right).
+ \end{equation*}
+ It then follows that $\cos x=\dfrac{1-t^2}{1+t^2}, \, \sin x =\dfrac{2t}{1+t^2}$ and $\dfrac{dx}{dt}=\dfrac{2}{1+t^2}$.
+ 
+ \noindent \textbf{Example:} Evaluate $\displaystyle \int \dfrac{dx}{2+2\sin x+\cos x}$.
+ 
+ \noindent \textbf{Solution:} We see that 
+ \begin{equation*}
+ \int \dfrac{dx}{2+2\sin x+\cos x} =\int \dfrac{2\, dt}{t^2+4t+3}.
+\end{equation*}  
+Since $t^2+4t+3=(t+1)(t+3)$, we use partial fractions, 
+\begin{eqnarray*}
+ \int \dfrac{dx}{2+2\sin x+\cos x} &=&\int \left(\dfrac{1}{t+1}-\dfrac{1}{t+3}\right)\, dt\\
+ &=& \ln |t+1|-\ln |t+3|+C\\
+ &=&\ln \left|\dfrac{t+1}{t+3}\right| +C\\
+ &=&\ln \left|\dfrac{1+\tan \frac{x}{2}}{3+\tan \frac{x}{2}}\right| +C.
+\end{eqnarray*}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \dfrac{dx}{5+3\cos x}$.
+
+\noindent \textbf{Solution:} The integral becomes 
+\begin{eqnarray*}
+\int \dfrac{dx}{5+3\cos x} &=& \int \dfrac{\dfrac{2dt}{1+t^2}}{5+3\left(\dfrac{1-t^2}{1+t^2}\right)}\\
+&=& \int \dfrac{\dfrac{2dt}{1+t^2}}{\dfrac{5(1+t^2)+3(1-t^2)}{1+t^2}} = \int \dfrac{2dt}{8+2t^2}\\
+&=& \int \dfrac{dt}{t^2+4} = \dfrac{1}{2}\tan ^{-1} \left(\frac{t}{2}\right) +C\\
+&=& \dfrac{1}{2}\tan ^{-1} \left(\dfrac{1}{2}\tan \frac{x}{2}\right)+C.
+\end{eqnarray*}
+
+\noindent \textbf{You Try It:} Evaluate $\displaystyle \int \dfrac{dx}{5+4\cos x}$.
+
+\section{Integration of Powers of Trigonometric Functions}
+With the aid of trigonometric identities, it is possible to evaluate integrals of the type
+\begin{equation*}
+\int \sin ^m x \cos ^n x \, dx.
+\end{equation*}
+We distinguish two cases.\\
+
+\noindent \textbf{Case 1: $m$ or $n$ is an odd positive integer.} Let us first assume that $m$ is an odd positive integer. By writing 
+\begin{equation*}
+\sin ^m x =\sin ^{m-1}x \sin x, 
+\end{equation*} 
+where $m-1$ is even, and using $\sin ^2 x =1-\cos ^2 x$, the integrand can be expressed as a \textit{sum} of powers of $\cos x$ times $\sin x$.
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \sin ^3 x\, dx$.
+
+\noindent \textbf{Solution:} 
+\begin{eqnarray*}
+\int \sin ^3 x\, dx &=&\int \sin ^2 x\sin x \, dx\\
+&=& \int (1-\cos ^2 x)\sin x \, dx \\
+&=&\int \sin x\, dx +\int \cos ^2 x (-\sin x)\, dx\\
+&=& -\cos x +\dfrac{1}{3}\cos ^3 x +C.
+\end{eqnarray*}
+
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \sin ^5 x \cos ^2x\, dx$.
+
+\noindent \textbf{Solution:}
+\begin{eqnarray*}
+\int \sin ^5 x \cos ^2 x\, dx &=& \int \cos ^2 x\sin ^4 x \sin x\, dx\\
+&=& \int \cos ^2 x (\sin ^2 x)^2 \sin x \, dx\\
+&=& \int \cos ^2 x (1-\cos ^2 x)^2 \sin x \, dx\\
+&=& \int \cos ^2 x (1-2\cos ^2 x+\cos ^4 x)\sin x \, dx\\
+&=& -\int \cos ^2 x (-\sin x)\, dx +2\int \cos ^4 x (-\sin x)\, dx -\int \cos ^6 x(-\sin x)\, dx \\
+&=&-\dfrac{1}{3}\cos ^3 x +\dfrac{2}{5}\cos ^5 x-\dfrac{1}{7}\cos ^7 x +C.
+\end{eqnarray*}
+If $n$ is an odd positive integer, the procedure for evaluation is the same except that we seek an integrand that is the sum of powers of $\sin x$ times $\cos x$.
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \sin ^4 x \cos ^3 x\, dx$.
+
+\noindent \textbf{Solution:} 
+\begin{eqnarray*}
+\int \sin ^4 x \cos ^3 x\, dx &=& \int \sin ^4 x \cos ^2 x \cos x\, dx\\
+&=& \int \sin ^4 x (1-\sin ^2 x)\cos x\, dx\\
+&=& \int \sin ^4 x (\cos x)\, dx -\sin ^6 x (\cos x)\, dx\\
+&=&\dfrac{1}{5}\sin ^5 x -\dfrac{1}{7}\sin ^7 x +C.
+\end{eqnarray*}
+ \noindent \textbf{You Try It:} Evaluate $\displaystyle \int \sin ^2 x \cos ^3 x \, dx$.
+ 
+ \noindent \textbf{Case II: $m$ and $n$ are both even non-negative integers.} When both $m$ and $n$ are even non-negative integers, the evaluation of the integral relies heavily on the identities, 
+ \begin{equation*}
+ \sin x \cos x =\dfrac{1}{2}\sin 2x, \quad \sin ^2 x =\dfrac{1-\cos 2x}{2}, \quad \cos ^2 x =\dfrac{1+\cos 2x}{2}.
+\end{equation*}
+
+\noindent \textbf{Example:} Evaluate $\displaystyle \int \cos ^4 x \, dx$.
+
+\noindent \textbf{Solution:} 
+\begin{eqnarray*}
+ \int \cos ^4 x \, dx &=& \int (\cos ^2 x)^2 \,dx\\
+ &=& \int \left(\dfrac{1+\cos 2x}{2}\right)^2 \, dx\\
+ &=& \dfrac{1}{4}\int (1+2\cos 2x +\cos ^2 2x)\, dx\\
+ &=&\dfrac{1}{4}\int \left(1+2\cos 2x+\dfrac{1+\cos 4x}{2}\right)\, dx\\
+ &=& \dfrac{1}{4} \int \left(\dfrac{3}{2}+2\cos 2x+\dfrac{1}{2}\cos 4x\right)\, dx\\
+ &=& \dfrac{3}{8}x+\dfrac{1}{4}\sin 2x +\dfrac{1}{32}\sin 4x +C.
+\end{eqnarray*}
+\textbf{You Try It:} Evaluate $\displaystyle \int \sin ^2 x \cos ^2 x\, dx$.  
+
+\noindent Instead of $\sin ^8 x \cos ^6 x$, suppose you have $\sin 8x\cos 6x$.
+
+\noindent \textbf{Example:} Find $\displaystyle \int _0^{2\pi}\sin 8x \cos 6x \, dx$.
+
+\noindent More generally, find $\displaystyle \int _0^{2\pi} \sin px \cos qx\, dx$. Use the identity 
+\begin{equation*}
+\sin px \cos qx =\dfrac{1}{2}\sin (p+q)x +\dfrac{1}{2}\sin (p-q)x.
+\end{equation*}
+Thus $\sin 8x\cos 6x=\dfrac{1}{2}\sin 14x +\dfrac{1}{2}\sin 2x$. Separated like this, sine are easy to integrate, 
+\begin{equation*}
+\int _{0}^{2\pi}\sin 8x \cos 6x \, dx =\left(-\dfrac{1}{2}\dfrac{\cos 14x}{14}-\dfrac{\cos 2x}{4}\right)\biggl| _{0}^{2\pi}=0.
+\end{equation*}
+With two sines or two cosines, the addition formula, derive these formulas, 
+\begin{eqnarray*}
+\sin px \cos qx  &=& -\dfrac{1}{2}\cos (p+q)x+\dfrac{1}{2}\cos (p-q)x.\\
+\cos px \cos qx &=& \dfrac{1}{2}\cos (p+q)x +\dfrac{1}{2}\cos (p-q)x.
+\end{eqnarray*}
+
+\noindent \textbf{You Try It:} Evaluate $\displaystyle \int \sin 2x \sin 4x\, dx$.
+\section{Tutorial Questions}
+\begin{enumerate}
+\item Find the area of the region bounded by the graphs of $f(x)=2(x+2)^3, x=-2, x=0$ and the $x$-axis by calculating the Riemann sums.
+\item Show that the function $f(x)=x$ on $[0,1]$ is Riemann integrable by calculating the Riemann sums.
+\item Evaluate the following.\\
+(i)\, $\displaystyle \int (x+2)\sin (x^2+4x-6)dx$ \quad (ii)\, $\displaystyle \int x^2e^{\sin x^3}\cos x^3 dx$ \quad (iii)\, $\displaystyle \int \dfrac{\tan ^{-1} x}{1+x^2}dx$ \\ (iv)\, $\displaystyle \int \dfrac{dx}{x(\ln x)^4}$ \quad (v)\, $\displaystyle \int x^2\sqrt{2x^3-4}dx$ \quad (vi)\, $\displaystyle \int \dfrac{3x}{\sqrt[3]{2x^2+3}}dx$ \quad (vii)\, $\displaystyle \int \dfrac{x\sin ^{-1}x^2}{\sqrt{1-x^4}}dx$.
+\item Integrate (i)\, $\dfrac{1}{(x^2+1)(x+1)}$ \quad (ii)\, $\dfrac{x+5}{(2x-1)(x+3)}$ \quad (iii)\, $\dfrac{2x-5}{(x^2+4)(x+6)}$.
+\item Evaluate each of the following integrals by using an appropriate substitution.\\
+(i)\, $\displaystyle \int \dfrac{x^5 dx}{\sqrt{x^3+1}}$ \quad (ii)\, $\displaystyle \int x^7\sqrt{x^4+1}dx$ \quad (iii)\, $\displaystyle \int \sqrt{\dfrac{1+x}{1-x}}dx$ \quad (iv)\, $\displaystyle \int \dfrac{x}{2+\sqrt{x+1}}dx$\\ (v)\, $\displaystyle \int  \dfrac{x^{\frac{2}{3}}}{1+x^{\frac{1}{2}}}dx$ \quad (vi)\, $\displaystyle \int \dfrac{1}{x^{\frac{1}{2}}+x^{\frac{1}{4}}}dx$ \quad (vii)\, $\displaystyle \int \dfrac{\sqrt[3]{x}}{1+\sqrt{x}}dx$.
+\item Evaluate each of the following integrals.\\
+(i)\, $\displaystyle \int \sin ^3 x dx$ \quad (ii)\, $\displaystyle \int \sin x \cos x dx$ \quad (iii)\, $\displaystyle \int \sin ^3 x \cos ^3 x dx$ \quad (iv)\, $\displaystyle \int \sin 6x \cos 3x dx$ \quad (v)\, $\displaystyle \int \cos x \cos 4x dx$ \quad (vi)\, $\displaystyle \int \sin 2x\sin 4x\, dx$ \quad (vii)\, $\displaystyle \int _0^{\frac{\pi}{2}}\sin \frac{3}{2}x \cos \frac{1}{2}x\, dx$.
+\item Use a suitable substitution to evaluate the following integrals.\\
+(i)\, $\displaystyle \int \sec \theta d\theta$ \quad (ii)\, $\displaystyle \int \dfrac{d\theta}{1+\sin \theta}$ \quad (iii)\, $\displaystyle \dfrac{\sin \theta}{2+\sin \theta}d\theta$ \quad (iv)\, $\displaystyle \int \dfrac{d\theta}{a+b\cos \theta}$ if $a>b>0$.
+\item Evaluate each of the following integrals.\\
+(i)\, $\displaystyle \int xe^{3x}dx$ \quad (ii)\, $\displaystyle \int e^x\sin x dx$ \quad (iii)\, $\displaystyle \int \tan ^{-1} x dx$ \quad (iv)\, $\displaystyle \int e^{ax}\cos px dx $\quad (v)\, $\displaystyle \int x^3\cos x dx$.
+\item 
+\begin{itemize}
+\item[(a)] Show that $\displaystyle \int x^m \ln x dx=x^{m+1}\left(\dfrac{\ln x}{m+1}-\dfrac{1}{(m+1)^2} \right), \, m \neq -1$.
+\item[(b)] Show that $\displaystyle \int \sin ^n x dx=\dfrac{-\sin ^{n-1}x \cos x}{n}+\dfrac{n-1}{n}\int \sin ^{n-2}x dx, \, n\neq 0$.
+\item[(c)] Show that $\displaystyle \int x^n e^{ax}dx=\dfrac{x^ne^{ax}}{a}-\dfrac{n}{a}\int x^{n-1}e^{ax}dx, \, n>0$.
+\item[(d)] Show that $\displaystyle \int \sin ^m x \cos ^n x dx=-\dfrac{\sin ^{m-1}x \cos ^{n+1}x}{m+n}+\dfrac{m-1}{m+n}\int \sin ^{m-2} x \cos ^n xdx$ and so find $\displaystyle \int \sin ^6x \cos ^5 x dx$.
+\item[(e)] Let $I_n=\displaystyle \int \sec ^n x dx, \, n=2,3,\dots$. Show that $I_n=\dfrac{\sec ^{n-2}x \tan x}{n-1}+\dfrac{n-2}{n-1}I_{n-2}$.
+\item[(f)] Let $I_n=\displaystyle \int (\ln x)^n dx, n=1,2,\dots$. Show that $I_n=x(\ln x)-nI_{n-1}$.
+\item[(g)] Let $\displaystyle I_n=\int x^ne^xdx, n=1,2,3,\dots$. Show that $I_n=x^ne^x-I_{n-1}$. Find $\displaystyle \int x^3e^xdx$.
+\item[(h)] Let $I_n=\displaystyle \int (1+ax^2)^n dx$. Show that $(2n+1)I_n=2nI_{n-1}+x(1+ax^2)^n$.
+\item[(i)] Let $\displaystyle \int _{0}^a (x^2+a^2)^{\frac{n}{2}}dx$. Show that $(n+1)I_n=2^{\frac{n}{2}}a^{n+1}+na^2I_{n-2}$.
+\end{itemize}
+\end{enumerate}
+\end{document}
+\end{document}
