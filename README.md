@@ -20,7 +20,8 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
 *   *  Includes Differentiation Techniques, The Chain Rule, High Order Derivatives, Logarithmic Differentiation and Implicit Differentiation.
 *   **[Chapter 6: Applications of the Derivative](./Chapter_6_Applications_of_the_Derivative/Chapter6.pdf)**
 *    * Includes Approximations by Differentials, The Mean Value Theorem, Indeterminate Forms, Extrema of Functions and Graphing and the First Derivative.
-*   **[Chapter 7: Integration](./Chapter_7_Integration/)** *(Coming Soon)*
+*   **[Chapter 7: Integration](./Chapter_7_Integration/Chapter7)**
+*   * Includes Anti-Derivatives, Indenfinite Integrals, Area Under a Graph, Riemann Sums, The Fundamental Theorem of Calculus and Techniques of Integration.
 
 ## 🛠️ How to Use This Repository
 
@@ -29,7 +30,7 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
 
 ### LaTeX Example
 Calculus requires heavy mathematical notation, which is why these notes are built in LaTeX. For example, the formal definition of a derivative is formatted as:
-$$f^{\prime}(x_{0}) = \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0})}{h}$$
+$$f^{\prime}(x_{0}) =\displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0})}{h}$$
 
 ---
 *Note: This is a personal study portfolio and is not an official university publication.*
