@@ -15,13 +15,13 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
 *   **[Chapter 3: Sequences](./Chapter_3_Sequences/Chapter3.pdf)** 
     *   Includes Limits of Sequences, Squeeze Theorem, and Monotonic Sequences.
 *   **[Chapter 4: Limits and Continuity](./Chapter_4_Limits_and_Continuity/Chapter4.pdf)**
-*   *  Includes Limits of a function, Theorems on Limits, Limits at Infinity, Continuity and Theorems on Continuity.
+    *  Includes Limits of a function, Theorems on Limits, Limits at Infinity, Continuity and Theorems on Continuity.
 *   **[Chapter 5: Differentiation](./Chapter_5_Differentiation/Chapter5.pdf)**
-*   *  Includes Differentiation Techniques, The Chain Rule, High Order Derivatives, Logarithmic Differentiation and Implicit Differentiation.
+    *  Includes Differentiation Techniques, The Chain Rule, High Order Derivatives, Logarithmic Differentiation and Implicit Differentiation.
 *   **[Chapter 6: Applications of the Derivative](./Chapter_6_Applications_of_the_Derivative/Chapter6.pdf)**
-*    * Includes Approximations by Differentials, The Mean Value Theorem, Indeterminate Forms, Extrema of Functions and Graphing and the First Derivative.
+     * Includes Approximations by Differentials, The Mean Value Theorem, Indeterminate Forms, Extrema of Functions and Graphing and the First Derivative.
 *   **[Chapter 7: Integration](./Chapter_7_Integration/Chapter7.pdf)**
-*   * Includes Anti-Derivatives, Indenfinite Integrals, Area Under a Graph, Riemann Sums, The Fundamental Theorem of Calculus and Techniques of Integration.
+    * Includes Anti-Derivatives, Indenfinite Integrals, Area Under a Graph, Riemann Sums, The Fundamental Theorem of Calculus and Techniques of Integration.
       
     ## 📝 Past Exam Papers
 
