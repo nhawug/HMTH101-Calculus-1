@@ -1,0 +1,31 @@
+# Downloads {.unnumbered}
+
+The PDFs below are the original compiled documents from the LaTeX source, unchanged. They are the version to print or to read offline; the chapters on this site are the same content set for the browser.
+
+## The complete notes
+
+| | Pages | Size | |
+|:--|--:|--:|:--|
+| **HMTH101 — Calculus of Single Variables**, all seven chapters | 105 | 2.3 MB | [PDF](../HMTH101_Calculus_1_Full_Notes/HMTH101notes.pdf) |
+
+: {tbl-colwidths="[44,14,16,26]"}
+
+## By chapter
+
+Each chapter PDF carries its own title page and table of contents, so they stand alone.
+
+| Chapter | Pages | Size | |
+|:--|--:|--:|:--|
+| 1. The Basics | 14 | 0.7 MB | [PDF](../Chapter_1_The-Basics/Chapter1.pdf) |
+| 2. Functions | 13 | 1.0 MB | [PDF](../Chapter_2_Functions/Chapter2.pdf) |
+| 3. Sequences | 10 | 0.9 MB | [PDF](../Chapter_3_Sequences/Chapter3.pdf) |
+| 4. Limits and Continuity | 14 | 0.8 MB | [PDF](../Chapter_4_Limits_and_Continuity/Chapter4.pdf) |
+| 5. Differentiation | 18 | 0.7 MB | [PDF](../Chapter_5_Differentiation/Chapter5.pdf) |
+| 6. Applications of the Derivative | 18 | 1.4 MB | [PDF](../Chapter_6_Applications_of_the_Derivative/Chapter6.pdf) |
+| 7. Integration | 27 | 0.9 MB | [PDF](../Chapter_7_Integration/Chapter7.pdf) |
+
+: {tbl-colwidths="[44,14,16,26]"}
+
+## LaTeX source
+
+The `.tex` files sit beside each PDF in the [repository](https://github.com/Donniezvadah/HMTH101-Calculus-1), together with the figures. `HMTH101_Calculus_1_Full_Notes/HMTH101notes.tex` is the master document — the individual chapter files are extracts from it, and this website is generated from it.

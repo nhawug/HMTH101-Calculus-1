@@ -1,0 +1,28 @@
+# About {.unnumbered}
+
+## The notes
+
+*Calculus of Single Variables* is the lecture notes for HMTH101, taught in the Department of Mathematics at the University of Zimbabwe. They were written by **G. Nhawu**, who holds the copyright. The notes cover a first course: the real numbers, functions, sequences, limits and continuity, the derivative and its applications, and integration through to the standard techniques.
+
+They are notes for a taught course, not a textbook. Proofs are given where the course gives them and omitted where it does not, and each chapter ends with the tutorial sheet the class works through.
+
+## This edition
+
+This is a web edition, built by **Donald Zvadah** as a contributor. It is generated from `HMTH101notes.tex`, the same LaTeX source the printed PDFs come from, so the mathematics on this site and the mathematics in the PDFs are the same text.
+
+What the conversion changed:
+
+- **Mathematics is rendered live** by MathJax rather than shown as a page image, so it reflows on a phone, can be selected and copied, and is read correctly by screen readers.
+- **Definitions, theorems and corollaries are numbered and addressable.** Each one has its own anchor, so a single result can be linked to directly.
+- **Tutorial sheets are boxed** at the end of each chapter, which is the one piece of visual structure the printed notes do not have.
+- **One structural repair.** In the printed notes the numbered list of number systems in @sec-basics is never closed, so the remainder of that section prints as part of item 4. On paper this shows only as an indent; on a web page it would swallow five subsections, so the list is closed after the fourth item here.
+
+The wording of the notes is untouched, including the chapter epigraphs and the tutorial questions. No worked solutions have been added.
+
+## Source and corrections
+
+Everything — the LaTeX source, the compiled PDFs, the figures, and the Quarto source for this site — is at [github.com/Donniezvadah/HMTH101-Calculus-1](https://github.com/Donniezvadah/HMTH101-Calculus-1).
+
+Corrections to the web edition, particularly anything where a formula does not match the PDF, are welcome as an issue on that repository. Corrections to the mathematics itself belong with the author.
+
+This is a student project and is not an official University of Zimbabwe publication.

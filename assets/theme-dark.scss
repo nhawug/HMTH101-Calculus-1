@@ -1,0 +1,58 @@
+/*-- scss:defaults --*/
+
+// Typography
+$font-family-sans-serif: "Source Sans 3", "Source Sans Pro", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas,
+  "Liberation Mono", monospace !default;
+$font-size-root: 19px !default;
+$line-height-base: 1.7 !default;
+$headings-font-weight: 600 !default;
+
+// Layout: wide body column, roomy sidebar
+$grid-body-width: 1400px !default;
+$grid-sidebar-width: 280px !default;
+$grid-margin-width: 230px !default;
+
+// Palette
+$body-bg: #10151c !default;
+$body-color: #d6dde5 !default;
+$link-color: #7fb8e0 !default;
+$link-hover-color: #a8d2f0 !default;
+
+$primary: #7fb8e0 !default;
+$secondary: #8a97a5 !default;
+
+// Chrome
+$navbar-bg: #0a0e14 !default;
+$navbar-fg: #e6ecf2 !default;
+$sidebar-bg: #161c25 !default;
+$sidebar-fg: #d6dde5 !default;
+$footer-bg: #0a0e14 !default;
+
+// Code
+$code-bg: #1b222c !default;
+$code-color: #e0a082 !default;
+$pre-bg: #161c25 !default;
+
+// Tables
+$table-border-color: #2a333f !default;
+
+/*-- scss:rules --*/
+
+:root {
+  --cal-rule: #2a333f;
+  --cal-muted: #9aa6b2;
+  --cal-surface: #161c25;
+  --cal-surface-strong: #1b222c;
+  --cal-accent: #7fb8e0;
+  --cal-accent-soft: #1c2a36;
+  --cal-definition: #7fb8e0;
+  --cal-theorem: #c79ad6;
+  --cal-example: #6fc9a4;
+  --cal-exercise: #e0aa6a;
+  --cal-proof: #9aa6b2;
+  --cal-tutorial: #e0aa6a;
+  --cal-tutorial-soft: #221a12;
+  --cal-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
