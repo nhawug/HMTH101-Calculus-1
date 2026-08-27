@@ -1,0 +1,98 @@
+\contentsline {chapter}{\numberline {1}The Basics}{1}{}%
+\contentsline {section}{\numberline {1.1}Number Systems}{1}{}%
+\contentsline {section}{\numberline {1.2}Intervals}{4}{}%
+\contentsline {section}{\numberline {1.3}Solving Inequalities}{5}{}%
+\contentsline {section}{\numberline {1.4}The Absolute Value}{5}{}%
+\contentsline {subsection}{\numberline {1.4.1}Properties of the Absolute Value }{6}{}%
+\contentsline {section}{\numberline {1.5}The Principle of Mathematical Induction}{7}{}%
+\contentsline {subsection}{\numberline {1.5.1}Steps}{7}{}%
+\contentsline {section}{\numberline {1.6}Tutorial Questions}{9}{}%
+\contentsline {chapter}{\numberline {2}Functions}{12}{}%
+\contentsline {section}{\numberline {2.1}What is a Function?}{12}{}%
+\contentsline {section}{\numberline {2.2}Graphs of Functions}{13}{}%
+\contentsline {section}{\numberline {2.3}Bounded Functions}{14}{}%
+\contentsline {section}{\numberline {2.4}Types of Functions}{14}{}%
+\contentsline {subsection}{\numberline {2.4.1}Elementary Functions}{14}{}%
+\contentsline {subsubsection}{Polynomial Function}{14}{}%
+\contentsline {subsubsection}{Rational Functions}{14}{}%
+\contentsline {subsubsection}{Power Function}{15}{}%
+\contentsline {subsubsection}{Piecewise Defined Functions}{15}{}%
+\contentsline {subsubsection}{Even and Odd Functions}{16}{}%
+\contentsline {section}{\numberline {2.5}Combining Functions}{17}{}%
+\contentsline {section}{\numberline {2.6}Composition of Functions}{18}{}%
+\contentsline {section}{\numberline {2.7}Bijection, Injection and Surjection}{18}{}%
+\contentsline {section}{\numberline {2.8}Operations on Functions}{20}{}%
+\contentsline {subsubsection}{Equality of Functions}{20}{}%
+\contentsline {subsubsection}{Identity Function}{21}{}%
+\contentsline {subsubsection}{Monotonic Functions}{21}{}%
+\contentsline {section}{\numberline {2.9}Tutorial Questions}{21}{}%
+\contentsline {chapter}{\numberline {3}Sequences}{23}{}%
+\contentsline {section}{\numberline {3.1}Limits of Sequences}{24}{}%
+\contentsline {section}{\numberline {3.2}Theorems on Limits}{25}{}%
+\contentsline {section}{\numberline {3.3}Sequences Tending to Infinity}{26}{}%
+\contentsline {section}{\numberline {3.4}Bounded and Monotonic Sequences}{27}{}%
+\contentsline {section}{\numberline {3.5}Limits of Combination of Sequences}{27}{}%
+\contentsline {section}{\numberline {3.6}Squeeze Theorem}{28}{}%
+\contentsline {section}{\numberline {3.7}Tutorial Questions}{28}{}%
+\contentsline {chapter}{\numberline {4}Limits and Continuity}{31}{}%
+\contentsline {section}{\numberline {4.1}Limit of a Function}{31}{}%
+\contentsline {subsubsection}{\underline {The $\varepsilon - \delta $ definition of $\displaystyle \lim _{x\rightarrow a}f(x)=A$}}{32}{}%
+\contentsline {subsubsection}{Right and Left Limits}{33}{}%
+\contentsline {section}{\numberline {4.2}Theorems on Limits}{33}{}%
+\contentsline {section}{\numberline {4.3}Special Limits}{34}{}%
+\contentsline {section}{\numberline {4.4}Methods of Calculating $\displaystyle \lim _{x\rightarrow a} f(x)$}{35}{}%
+\contentsline {subsubsection}{If $f(a)$ is defined}{35}{}%
+\contentsline {subsubsection}{Functions Defined By More Than One Expression}{35}{}%
+\contentsline {subsubsection}{Limits at Infinity}{36}{}%
+\contentsline {subsubsection}{Limits at Infinity of a Rational Function}{37}{}%
+\contentsline {section}{\numberline {4.5}Continuity}{38}{}%
+\contentsline {section}{\numberline {4.6}The $\varepsilon - \delta $ Definition of Continuity}{39}{}%
+\contentsline {subsubsection}{Theorems on Continuity}{40}{}%
+\contentsline {section}{\numberline {4.7}Tutorial Questions}{40}{}%
+\contentsline {chapter}{\numberline {5}Differentiation}{43}{}%
+\contentsline {section}{\numberline {5.1}Differentiation Techniques (Finding Derivatives)}{45}{}%
+\contentsline {section}{\numberline {5.2}Derivatives of Trigonometric Functions}{48}{}%
+\contentsline {section}{\numberline {5.3}Derivative of a Composition [The Chain Rule]}{50}{}%
+\contentsline {section}{\numberline {5.4}Continuity and Differentiation}{51}{}%
+\contentsline {section}{\numberline {5.5}Higher Order Derivatives}{52}{}%
+\contentsline {section}{\numberline {5.6}Implicit Differentiation}{53}{}%
+\contentsline {section}{\numberline {5.7}Logarithmic Differentiation}{55}{}%
+\contentsline {section}{\numberline {5.8}Derivatives of Inverse Trigonometric Functions}{56}{}%
+\contentsline {section}{\numberline {5.9}Tutorial Questions}{56}{}%
+\contentsline {chapter}{\numberline {6}Applications of the Derivative}{59}{}%
+\contentsline {section}{\numberline {6.1}Approximation by Differentials}{59}{}%
+\contentsline {section}{\numberline {6.2}The Mean Value Theorem}{61}{}%
+\contentsline {section}{\numberline {6.3}Some Corollaries of The Mean Value Theorem}{64}{}%
+\contentsline {section}{\numberline {6.4}Indeterminate Forms}{64}{}%
+\contentsline {section}{\numberline {6.5}Extrema of Functions}{68}{}%
+\contentsline {section}{\numberline {6.6}Tutorial Questions}{69}{}%
+\contentsline {section}{\numberline {6.7}Graphing and the First Derivative}{70}{}%
+\contentsline {subsection}{\numberline {6.7.1}Point of Inflection}{72}{}%
+\contentsline {section}{\numberline {6.8}Sketching the graph of $y=f(x)$}{73}{}%
+\contentsline {section}{\numberline {6.9}Tutorial Questions}{73}{}%
+\contentsline {chapter}{\numberline {7}Integration}{75}{}%
+\contentsline {section}{\numberline {7.1}Anti-derivatives}{75}{}%
+\contentsline {section}{\numberline {7.2}Indefinite Integral }{76}{}%
+\contentsline {section}{\numberline {7.3}The Indefinite Integral of a Power}{76}{}%
+\contentsline {section}{\numberline {7.4}Some Ant-Differentiation Formulas}{78}{}%
+\contentsline {section}{\numberline {7.5}$u-$Substitution}{79}{}%
+\contentsline {subsubsection}{The Indefinite Integral of a Power of a Function}{79}{}%
+\contentsline {section}{\numberline {7.6}Sigma Notation}{80}{}%
+\contentsline {subsection}{\numberline {7.6.1}Summation Formulas}{81}{}%
+\contentsline {section}{\numberline {7.7}Area Under a Graph}{82}{}%
+\contentsline {section}{\numberline {7.8}Riemann Sums}{82}{}%
+\contentsline {subsection}{\numberline {7.8.1}The Definite Integral}{85}{}%
+\contentsline {subsection}{\numberline {7.8.2}Properties of the Definite Integral}{85}{}%
+\contentsline {section}{\numberline {7.9}The Fundamental Theorem of Calculus}{86}{}%
+\contentsline {section}{\numberline {7.10}Techniques of Integration}{87}{}%
+\contentsline {subsection}{\numberline {7.10.1}Integration by Parts}{87}{}%
+\contentsline {section}{\numberline {7.11}Using Integration by Parts Repeatedly}{88}{}%
+\contentsline {section}{\numberline {7.12}Evaluating a Definite Integral}{89}{}%
+\contentsline {section}{\numberline {7.13}Reduction Formulas}{89}{}%
+\contentsline {section}{\numberline {7.14}Partial Fractions}{91}{}%
+\contentsline {subsection}{\numberline {7.14.1}Integrating with Repeated Factors}{91}{}%
+\contentsline {subsection}{\numberline {7.14.2}Integrating an Improper Rational Function}{92}{}%
+\contentsline {subsection}{\numberline {7.14.3}Quadratic Factors}{92}{}%
+\contentsline {section}{\numberline {7.15}Integration of Rational Functions of Sine and Cosine}{93}{}%
+\contentsline {section}{\numberline {7.16}Integration of Powers of Trigonometric Functions}{94}{}%
+\contentsline {section}{\numberline {7.17}Tutorial Questions}{97}{}%
