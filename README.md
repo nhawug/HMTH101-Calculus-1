@@ -8,7 +8,7 @@ This repository contains my digitized study notes based on the lectures by G. NH
 
 If you prefer to download the entire course in a single document, you can grab the full compiled PDF here:
 
-*   **[Download the Complete HMTH101 Notes](./HMTH101_Calculus_1_Full_Notes/HMTH101notes.pdf)**
+*   **[Download the Complete HMTH101 Notes](./HMTH101notes.pdf)**
 
 ## 📖 Table of Contents
 
