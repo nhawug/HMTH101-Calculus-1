@@ -1,0 +1,11 @@
+\contentsline {chapter}{\numberline {6}Applications of the Derivative}{2}{}%
+\contentsline {section}{\numberline {6.1}Approximation by Differentials}{2}{}%
+\contentsline {section}{\numberline {6.2}The Mean Value Theorem}{4}{}%
+\contentsline {section}{\numberline {6.3}Some Corollaries of The Mean Value Theorem}{7}{}%
+\contentsline {section}{\numberline {6.4}Indeterminate Forms}{7}{}%
+\contentsline {section}{\numberline {6.5}Extrema of Functions}{11}{}%
+\contentsline {section}{\numberline {6.6}Tutorial Questions}{12}{}%
+\contentsline {section}{\numberline {6.7}Graphing and the First Derivative}{13}{}%
+\contentsline {subsection}{\numberline {6.7.1}Point of Inflection}{15}{}%
+\contentsline {section}{\numberline {6.8}Sketching the graph of $y=f(x)$}{16}{}%
+\contentsline {section}{\numberline {6.9}Tutorial Questions}{16}{}%
