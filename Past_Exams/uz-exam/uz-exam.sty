@@ -1,0 +1,339 @@
+%          --- Style file for University of Zimbabwe Exams ---
+%              ===== ==== === ========== == ======== =====
+%
+%  Version 1.00     June, 1993
+%
+%  This provides macros for setting an exam in the standard University of
+%  Zimbabwe format.  Specifically, it does these things:
+%
+%    * draws an outline around the border of each page, sets the appropriate  
+%      pagesize and offset parameters, and prints the page number at the 
+%      bottom and the course number at the top (except on page 1);
+%
+%    * provides a macro \makeheading to set the heading at the top of the
+%      first page, as well as a mechanism for inputing the information needed 
+%      for this heading;
+%
+%    * contains the standard rubrics, so these need not be typed every time;
+%
+%    * defines macros for setting section headings, together with the 
+%      correct instructions for each section, if any;
+%
+%    * defines these additional macros:
+%      \endexam      properly set the end of the exam;
+%      \marks[]      set the number of marks out to the right margin;
+%      \qskip        put space between questions, and prevent page breaks
+%                    elsewhere;
+%      \noeqbreaks   prevent equations from being broken onto two lines;
+%
+%
+% Written by Gary Nelson, who is still single, if you know anyone.
+
+\magnification=\magstephalf
+%  The \magnification may be changed, subject to the following optional 
+%  suggestion.  Adjust \borderheight to 264truemm for \magstep0 or 
+%  \magstephalf, and to 265truemm for \magstep1 (this adjustment is small 
+%  and uncritical).
+
+%  Store the catcode of the @ in the csname so that it can be restored later.
+\expandafter\chardef\csname pre uz-exam.sty at\endcsname=\the\catcode`\@
+%  Set the catcode to 11 for use in private control sequence names.
+\catcode`\@=11
+
+%   ****************************
+%   *   Page Setup and Border  *
+%   ****************************
+
+% output size for A4 paper
+\hsize155truemm    % 155truemm is the usual size
+\vsize247truemm    % 256truemm 
+
+%  offsets to make smaller left and top margins.  (Different \hoffset should
+%  be set for even number pages if pages are printed back-to-back; currently
+%  this is not done.)
+\hoffset=0.5truecm
+\voffset=-0.2truecm
+
+%  borderheight and borderwidth are the dimensions of the border to be 
+%  drawn around each page.
+%
+%  borderheight should be about \vsize + 14pt + 8 pt.
+%    The 14pt is the distance below the header which the text starts.
+%    The 8pt puts the lower line that distance below the bottom of
+%       the text, but still about 6pt above the footline, which can
+%       for example carry page information.
+%    Note that  14pt + 8 pt  =  22pt  =  7.732mm
+%                            =  9.279truemm in \magstep1
+%       so add about 8truemm normally, 9truemm in \magstep1.
+%  borderwidth should be about \hsize + 1truecm (1/2 cm on each side).
+\newdimen\borderheight
+  \borderheight=255truemm     % 264truemm for \magstep0, -half;
+                              % 265truemm for \magstep1
+\newdimen\borderwidth
+  \borderwidth=165truemm      % 165truemm
+
+% Draw a border around each page.  This macro will be used in the headline.
+\def\@drawborder{\hskip-0.5truecm%
+  \rlap{\vbox to 0pt{\hrule width1truept height\borderheight\vss}}%
+  \vrule width\borderwidth height1truept%
+  \llap{\vbox to 0pt{\hrule width1truept height\borderheight\vss}}%
+  \llap{\vbox to 0pt{\vskip\borderheight\hrule width\borderwidth
+    height1truept\vss}}%
+  \hss}
+
+%  The course number -- in a box of zero size -- is also put in the headline.
+%
+\def\@coursenumberbox{\llap{\vbox to 0pt{\vss%
+  \hbox{\smallfont\@coursenumber}\vskip0.5ex}}}
+
+%  Here \\ is locally defined as a regular slash /.
+%
+\def\@nosplitcoursenumber{\def\\{/}}
+
+%  The headline is where the border is drawn.  In addition, if the page number
+%  is greater than 1, the course number is printed.
+\headline={\@drawborder 
+  \ifnum\count0>1
+    \@ifundefined{@coursenumber}{}{\@nosplitcoursenumber\@coursenumberbox}\fi}
+
+%  The footline should contain page information, or \hfil if there is none.
+\footline={\hss\tenpoint\bf page \folio\ of 
+  \@ifundefined{@lastpage}{???}{\@lastpage}}
+
+%  The following macro draws a line across the page.  (Used in \makeheading)
+\def\lineacross{\line{\hskip-0.5truecm%
+  \vrule width\borderwidth height1truept\hss}}
+
+%   ***************
+%   *   Heading   *
+%   ***************
+%
+%  This is how the definitions SHOULD be made for inputing needed information:
+%
+%  \def\coursenumber#1{\gdef\@coursenumber{#1}}
+%  \def\examtitle#1{\gdef\@examtitle{#1}}
+%  \def\coursename#1{\gdef\@coursename{#1}}
+%  \def\examdate#1{\gdef\@examdate{#1}}
+%  \def\hours#1{\gdef\@hours{#1}}
+%  \def\lastpage#1{\gdef\@lastpage{#1}}
+%  \def\rubric#1{\gdef\@rubric{#1}}
+%
+%  However exams before mid-1993 used these control sequences in a completely
+%  different way.  For compatibility, the above definitions are only made if
+%  the respective control sequences are not already defined.  This is done 
+%  using a macro \@ifundefined copied from LaTeX.  In future, the complicated
+%  code below can be deleted and replaced with the simpler code above.
+%
+\long\def\@ifundefined#1#2#3{\expandafter\ifx\csname
+  #1\endcsname\relax#2\else#3\fi}
+%
+\@ifundefined{coursenumber}{\def\coursenumber#1{\gdef\@coursenumber{#1}}}
+  {\gdef\@coursenumber{}}
+\@ifundefined{examtitle}{\def\examtitle#1{\gdef\@examtitle{#1}}}{}
+\@ifundefined{coursename}{\def\coursename#1{\gdef\@coursename{#1}}}{}
+\@ifundefined{examdate}{\def\examdate#1{\gdef\@examdate{#1}}}{}
+\@ifundefined{hours}{\def\hours#1{\gdef\@hours{#1\ HOURS}}}{}
+\@ifundefined{lastpage}{\def\lastpage#1{\gdef\@lastpage{#1}}}
+  {\gdef\@lastpage{\lastpage}}
+\@ifundefined{rubric}{\def\rubric#1{\gdef\@rubric{#1}}}{}
+%
+%  Now for the macro to print the heading at the top of the first page.
+%
+\def\makeheading{
+%
+%  First decide what to do if various parameters are not defined by the user.
+%
+  \def\@nocoursenumber{???%
+    \write16{===UZ=Exam===> Warning: Don't forget the course number.}}
+  \def\@noexamtitle{{\tt$\backslash$examtitle} {\sl MISSING} !!!%
+    \write16{===UZ=Exam===> Warning: Don't forget the exam title.}}
+  \def\@nocoursename{%
+    \write16{===UZ=Exam===> Warning: No course name; did you want one?}}
+  \def\@noexamdate{{\tt$\backslash$examdate} {\sl MISSING} !!!
+    \write16{===UZ=Exam===> Warning: Don't forget the exam date.}}
+  \def\@nohours{???\write16{===UZ=Exam===> Warning: Don't forget the hours.}}
+  \def\@norubric{{\tt$\backslash$rubric} {\sl MISSING} !!!
+    \write16{===UZ=Exam===> Warning: Don't forget the rubric.}}
+%
+%  Now make the heading.
+%
+  \line{\hfil{\title UNIVERSITY OF ZIMBABWE}\hfil\llap{%
+    \vbox{\hfill\@ifundefined{@coursenumber}
+      {\@nocoursenumber}
+      {\@splitcoursenumbers\@coursenumber} }}}
+   \bigskip
+  \centerline{\underbar{%
+    \@ifundefined{@examtitle}{\@noexamtitle}{\@examtitle}}}
+  \@ifundefined{@coursename}
+    {\@nocoursename}
+    {\bigskip\centerline{\smallcaps\@coursename}}
+   \bigskip\medskip
+   \noindent
+  \@ifundefined{@examdate}{\@noexamdate}{\@examdate}
+   \bigskip\noindent%
+  TIME : \@ifundefined{@hours}{\@nohours}{\@hours}
+   \vskip1truecm
+   \noindent
+  \@ifundefined{@rubric}{\@norubric}{\@rubric}
+   \medskip
+  \lineacross
+   \bigskip
+  \let\makeheader=\relax
+    \gdef\@examtitle{} \gdef\@coursename{}  \gdef\@examdate{}
+    \gdef\@time{}      \gdef\@rubric{} }
+    
+%  The double backslash \\ may occur between two course numbers, as in
+%  HMT225\\MT305.  In the upper right corner of the first page, it means
+%  the first number should occur on top of the second.  (The definition 
+%  below is inelegant, but it's the best I could think of, and it works.)
+%
+\def\@splitcoursenumbers{\def\\{\break\phantom{}\hfill}}
+
+%  Macro to end the exam paper
+%
+\def\endexam{
+   \ifdim\lastskip=0pt \bigskip\bigskip \fi
+   \vfill
+  \centerline{\bf END OF QUESTION PAPER}
+  \@ifundefined{@lastpage}
+    {\write16{===UZ=Exam===>  
+       Warning: Don't forget the last page number.}}{}
+   \vfill\eject\end }
+
+%  ************************
+%  *   Standard Rubrics   *
+%  ************************
+%
+\def\enginI{Candidates may attempt at most SIX questions.  Full marks can be 
+  obtained for complete solutions to FIVE questions.  Candidates are advised 
+  that it is in their own interest to concentrate on obtaining complete 
+  solutions to questions rather than producing fragmentary answers to a larger 
+  number of questions.}
+\def\enginII{Candidates may attempt at most THREE questions from each section, 
+  i.e.\ at most six questions altogether.  Full marks can be obtained for 
+  complete solutions to FIVE questions.  Candidates are advised 
+  that it is in their own interest to concentrate on obtaining complete 
+  solutions to questions rather than producing fragmentary answers to a larger 
+  number of questions.}
+\def\honours{Candidates may attempt ALL questions.  Full marks will be
+  awarded for well-presented complete answers to about FOUR questions.}
+\def\msc{Candidates may attempt ALL questions.  Full marks will be 
+  awarded for well-presented complete answers to about FOUR questions.}
+%\def\honours{Candidates may attempt ALL questions.  Full marks can be obtained
+%  for complete solutions to FOUR questions.  Candidates are advised
+%  that it is in their own interest to concentrate on obtaining complete
+%  solutions to questions rather than producing fragmentary answers to a larger
+%  number of questions.}
+%\def\msc{Candidates may attempt ALL questions.  Full marks can be obtained
+%  for complete solutions to THREE questions.  Candidates are advised
+%  that it is in their own interest to concentrate on obtaining complete
+%  solutions to questions rather than producing fragmentary answers to a larger
+%  number of questions.}
+\def\science{Candidates may attempt ALL questions in Section A and at most 
+  TWO questions in Section B.
+  \@redefinesections}
+\def\scienceo{Candidates may attempt ALL questions in Section A and at most 
+  THREE questions in Section B.
+  % The science rubric also redefines \sectionA and \sectionB
+  \@redefinesections}
+
+%  \lastA sets \@qcount to the last problem number of Section A.  Later 
+%  \@qcount increments to the first and finally the last problem numbers of 
+%  Section B.
+%  \@qcount is initially set to a negative number, so that if \lastA is
+%  omitted the error can be detected. 
+%
+\newcount\@qcount
+\@qcount=-5
+
+\def\lastA#1{\@qcount=#1}
+
+\def\sectionA{
+  \centerline{\bf SECTION A}
+   \bigskip\bigskip}
+
+\gdef\sectionB{
+   \ifdim\lastskip=0pt \qskip\bigskip \else\bigskip \fi
+  \centerline{\bf SECTION B}
+   \bigskip\bigskip}
+
+\def\sectionAscience{
+  \centerline{{\bf SECTION A} \ (40 marks)}
+    \medskip
+    \noindent%
+  Candidates may attempt ALL questions being careful to number them A1 to 
+  A{\ifnum\@qcount>0{\number\@qcount}\else ?\fi}.  Each question A1 to 
+  A{\ifnum\@qcount>0{\number\@qcount}\else ?
+    \write16{===UZ=Exam===> Warning: lastA missing or negative.}\fi}
+  should start on a fresh page.
+   \bigskip\bigskip}
+
+\gdef\sectionBscience{
+   \ifdim\lastskip=0pt \qskip\bigskip \else\bigskip \fi
+  \centerline{{\bf SECTION B} \ (60 marks)}
+   \medskip
+   \noindent%
+  Candidates may attempt TWO questions being careful to number them 
+    \advance\@qcount by 1
+  B{\ifnum\@qcount>0{\number\@qcount}\else ?\fi} to 
+    \advance\@qcount by 3
+  B{\ifnum\@qcount>0{\number\@qcount}\else ?\fi}.
+   \bigskip\bigskip}
+
+\def\@redefinesections{
+  \global\let\sectionA=\sectionAscience
+  \global\let\sectionB=\sectionBscience}
+
+
+%   *********************************
+%   *   Miscellaneous Definitions   *
+%   *********************************
+
+\def\qskip{\filbreak\bigskip\bigskip}
+
+%  Number of marks for each (sub)question
+\def\marks{\unskip~\hfill}
+
+\relpenalty=1000 \binoppenalty=1400
+%  Option to prevent line breaks in the middle of equations
+\def\noeqbreaks{\relpenalty=10000 \binoppenalty=10000}
+
+%  expanded set of \item macros (slightly different than those in Plain TeX)
+\def\item#1{\par\noindent \hangindent\parindent \rlap{#1}\indent\ignorespaces}
+\def\itemitem#1{\par\indent \hangindent2\parindent
+  \rlap{#1}\indent\ignorespaces}
+\def\doubleitem#1#2{\par\noindent \hangindent2\parindent 
+  \rlap{#1}\indent\ignorespaces \rlap{#2}\indent\ignorespaces}
+\def\itemitemitem#1{\par\indent\indent \hangindent3\parindent
+  \rlap{#1}\indent\ignorespaces}
+\def\tripleitem#1#2#3{\par\noindent \hangindent3\parindent 
+  \rlap{#1}\indent\ignorespaces \rlap{#2}\indent\ignorespaces
+  \rlap{#3}\indent\ignorespaces}
+
+
+%   *************
+%   *   Fonts   *
+%   *************
+
+\font\title=cmb10 at 20.74truept   % \magstep4 (2074) for no \magnification
+\font\smallcaps=cmcsc10 at 12truept
+\font\smallfont=cmr8
+
+\def\tenpoint{\def\rm{\fam0 \tenrm}% switch to 10-point type
+  \textfont0=\tenrm \scriptfont0=\sevenrm \scriptscriptfont0=\fiverm
+  \textfont1=\teni  \scriptfont1=\seveni  \scriptscriptfont1=\fivei
+  \textfont2=\tensy \scriptfont2=\sevensy \scriptscriptfont2=\fivesy
+  \textfont3=\tenex   \scriptfont3=\tenex \scriptscriptfont3=\tenex
+  \textfont\itfam=\tenit  \def\it{\fam\itfam\tenit}%
+  \textfont\slfam=\tensl  \def\sl{\fam\slfam\tensl}%
+  \textfont\ttfam=\tentt  \def\tt{\fam\ttfam\tentt}%
+  \textfont\bffam=\tenbf  \scriptfont\bffam=\sevenbf
+   \scriptscriptfont\bffam=\fivebf  \def\bf{\fam\bffam\tenbf}% 
+  %\tt \ttglue=.5em plus.25em minus.15em
+  \normalbaselineskip=12pt
+  \setbox\strutbox=\hbox{\vrule height8.5pt depth3.5pt width0pt}%
+  \let\sc=\eightrm  \let\big=\tenbig  \normalbaselines\rm}
+
+
+%  Restore the catcode value for @ that was previously saved.
+\catcode`\@=\csname pre uz-exam.sty at\endcsname
