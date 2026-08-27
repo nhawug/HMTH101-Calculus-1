@@ -18,7 +18,8 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
 *   *  Includes Limits of a function, Theorems on Limits, Limits at Infinity, Continuity and Theorems on Continuity.
 *   **[Chapter 5: Differentiation](./Chapter_5_Differentiation/Chapter5.pdf)**
 *   *  Includes Differentiation Techniques, The Chain Rule, High Order Derivatives, Logarithmic Differentiation and Implicit Differentiation.
-*   **[Chapter 6: Applications of the Derivative](./Chapter_6_Applications_of_the_Derivative/)** *(Coming Soon)*
+*   **[Chapter 6: Applications of the Derivative](./Chapter_6_Applications_of_the_Derivative/Chapter6.pdf)**
+*    * Includes Approximations by Differentials, The Mean Value Theorem, Indeterminate Forms, Extrema of Functions and Graphing and the First Derivative.
 *   **[Chapter 7: Integration](./Chapter_7_Integration/)** *(Coming Soon)*
 
 ## 🛠️ How to Use This Repository
