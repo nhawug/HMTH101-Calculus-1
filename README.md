@@ -22,6 +22,13 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
 *    * Includes Approximations by Differentials, The Mean Value Theorem, Indeterminate Forms, Extrema of Functions and Graphing and the First Derivative.
 *   **[Chapter 7: Integration](./Chapter_7_Integration/Chapter7.pdf)**
 *   * Includes Anti-Derivatives, Indenfinite Integrals, Area Under a Graph, Riemann Sums, The Fundamental Theorem of Calculus and Techniques of Integration.
+      
+    ## 📝 Past Exam Papers
+
+Practice makes perfect! I have included previous years' exam papers to help with revision and exam preparation. 
+
+* **[2013 Final Exam Question Paper](./Past_Exams/decem2013.pdf)**
+* **[2017 Final Exam Question Paper](./Past_Exams/wintCalculus17.pdf)**
 
 ## 🛠️ How to Use This Repository
 
