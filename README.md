@@ -12,7 +12,7 @@ Below are the direct links to the compiled PDFs and LaTeX source code for each c
     *   Includes Number Systems, Intervals, Solving Inequalities, The Absolute Value, and The Principle of Mathematical Induction.
 *   **[Chapter 2: Functions](./Chapter_2_Functions/Chapter2.pdf)** 
     *   Includes Elementary Functions, Bounded Functions, and Operations on Functions.
-*   **[Chapter 3: Sequences](./Chapter_3_Sequences/)** *(Coming Soon)*
+*   **[Chapter 3: Sequences](./Chapter_3_Sequences/Chapter3.pdf)** 
     *   Includes Limits of Sequences, Squeeze Theorem, and Monotonic Sequences.
 *   **[Chapter 4: Limits and Continuity](./Chapter_4_Limits_and_Continuity/)** *(Coming Soon)*
 *   **[Chapter 5: Differentiation](./Chapter_5_Differentiation/)** *(Coming Soon)*
