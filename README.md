@@ -4,6 +4,12 @@ Welcome to my repository for **HMTH101 Calculus of Single Variables**!
 
 This repository contains my digitized study notes based on the lectures by G. NHAWU at the University of Zimbabwe. I have typeset these notes in LaTeX for clean mathematical formatting and compiled them into easy-to-read PDFs.
 
+## 📕 Complete Course PDF
+
+If you prefer to download the entire course in a single document, you can grab the full compiled PDF here:
+
+*   **[Download the Complete HMTH101 Notes](./HMTH101notes.pdf)**
+
 ## 📖 Table of Contents
 
 Below are the direct links to the compiled PDFs and LaTeX source code for each chapter. 
