@@ -8,6 +8,21 @@ Welcome to my repository for **HMTH101 Calculus of Single Variables**!
 
 This repository contains my digitized study notes based on the lectures by G. NHAWU at the University of Zimbabwe. I have typeset these notes in LaTeX for clean mathematical formatting and compiled them into easy-to-read PDFs.
 
+## 🌐 Read them online
+
+The notes are also published as a website, built with [Quarto](https://quarto.org) from the same LaTeX source as the PDFs. The mathematics is rendered live by MathJax, so it reflows on a phone and can be copied; definitions and theorems are numbered and linkable.
+
+Author: **G. Nhawu**. Web edition: **Donald Zvadah** (contributor).
+
+To build and read it locally:
+
+```
+python3 tools/tex2qmd.py   # regenerate chapters/ from HMTH101notes.tex
+quarto preview             # or: quarto render
+```
+
+`tools/tex2qmd.py` needs `pandoc`; the render needs `quarto`. Only `chapters/` is generated — `index.qmd`, `appendix/` and `style.css` are written by hand. To publish: `quarto publish quarto-pub`.
+
 ## 📕 Complete Course PDF
 
 If you prefer to download the entire course in a single document, you can grab the full compiled PDF here:

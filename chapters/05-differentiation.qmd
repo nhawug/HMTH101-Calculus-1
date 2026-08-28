@@ -1,0 +1,475 @@
+# Differentiation {#sec-differentiation}
+
+::: {.epigraph}
+Any man who can drive safely while kissing a pretty girl is simply not giving the kiss the attention it deserves.
+
+[— Albert Einstein]{.epigraph-by}
+:::
+
+**Increments.** The *increment* $\Delta x$ of a variable $x$ is the change in $x$ as it increases or decreases from one value $x=x_0$ to another value $x=x_1$ in its domain. Here, $\Delta x=x_1-x_0$ and we may write $x_1=x_0+\Delta x$. If the variable $x$ is given an increment $\Delta x$ from $x=x_0$ (i.e., if $x$ changes from $x=x_0$ to $x_1=x_0+\Delta x$) and a function $y=f(x)$ is thereby given an increment $\Delta y=f(x_0+\Delta x)-f(x_0)$ from $y=f(x_0)$, then the quotient $$\dfrac{\Delta y} {\Delta x}=\dfrac{\text{change in}~~ y}{\text{change in }~ x},$$ is called the *average rate of change* of the function on the interval between $x=x_0$ and $x_1=x_0+\Delta x$.
+
+Let $f(x)$ be defined at any point $x_0$ in $(a,b)$. The derivative of $f(x)$ at $x=x_0$ is defined as $$f'(x_0)=\lim _{h\rightarrow 0}\dfrac{f(x_0+h)-f(x_0)}{h}$$ if this limit exists. A function is called **differentiable** at a point $x=x_0$, if it has a derivative at that point, i.e., if $f'(x_0)$ exists. If we write $x=x_0+h$, then $h=x-x_0$ and $h$ approaches $0$ if and only if $x$ approaches $x_0$. Therefore, an equivalent way of stating the definition of the derivative, is $$f'(x_0)=\lim _{x\rightarrow x_0} \dfrac{f(x)-f(x_0)}{x-x_0}.$$
+
+**Example:** If $f(x)=x^3-x$, find a formula for $f'(x)$.
+
+**Solution:** $$\begin{aligned}
+f'(x) &=  \lim _{h\rightarrow 0} \dfrac{f(x+h)-f(x)}{h} =\lim _{h\rightarrow 0}\dfrac{[(x+h)^3-(x+h)]-[x^3-x]}{h}\\
+&=  \lim _{h\rightarrow 0} \dfrac{x^3+3x^2h+3xh^2+h^3-x-h-x^3+x}{h}\\
+&=  \lim _{h\rightarrow 0} \dfrac{3x^2h+3xh^2+h^3-h}{h}\\
+&=  \lim _{h\rightarrow 0} (3x^2+3xh+h^2-1) =3x^2-1.
+\end{aligned}$$
+
+**Example:** If $f(x)=\sqrt{x}$, find the derivative of $f$.
+
+**Solution:** $$\begin{aligned}
+f'(x) &=  \lim _{h\rightarrow 0} \dfrac{f(x+h)-f(x)}{h}\\
+&=  \lim _{h\rightarrow 0} \dfrac{\sqrt{x+h}-\sqrt{x}}{h}\\
+&=  \lim _{h\rightarrow 0} \dfrac{\sqrt{x+h}-\sqrt{x}}{h} \cdot \dfrac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}-\sqrt{x}}\\
+&=  \lim _{h\rightarrow 0} \dfrac{(x+h)-x}{h(\sqrt{x+h}+\sqrt{x})}\\
+&=  \lim _{h\rightarrow 0} \dfrac{1}{\sqrt{x+h}+\sqrt{x}}\\
+&=  \dfrac{1}{\sqrt{x} +\sqrt{x}} =\dfrac{1}{2\sqrt{x}}. 
+\end{aligned}$$ The derivative at $x$ may be denoted by $f'(x)$, $y'$, $\dfrac{dy}{dx}$, $\dfrac{d}{dx}(f(x))$. The symbol $\dfrac{d}{dx}$ is called **differentiation operator** because it indicates the operation of **differentiation**. The process of finding derivatives of functions is called **differentiation**.
+
+A function $f$ is differentiable at $x_0$ if $f'(x_0)$ exists. It is **differentiable on an open interval** $(a,b)$ \[or $(a,\infty)$ or $(-\infty , a)$ or $(-\infty , \infty)$\], if it is differentiable at every number in the interval.
+
+**Example:** Where is the function $f(x)=|x|$ differentiable?
+
+**Solution:** If $x>0$, then $|x|=x$ and we can choose $h$ small enough that $x+h>0$ and hence $|x+h|=x+h$. Therefore, for $x>0$, $$\begin{aligned}
+f'(x) &=  \lim _{h\rightarrow 0}\dfrac{|x+h|-|x|}{x}\\
+&= \lim _{h\rightarrow 0} \dfrac{(x+h)-x}{h}=\lim _{h\rightarrow 0}\dfrac{h}{h}=1,
+\end{aligned}$$ and so $f$ is differentiable for any $x>0$.
+
+Similarly, for $x<0$, we have $|x|=-x$ and $h$ can be chosen small enough that $x+h<0$ and so $|x+h|=-(x+h)$. Therefore, for $x<0$, $$\begin{aligned}
+f'(x) &=  \lim _{h\rightarrow 0}\dfrac{|x+h|-|x|}{h}\\
+&=  \lim _{h\rightarrow 0}\dfrac{-(x+h)-(-x)}{h} =\lim _{h\rightarrow 0} \dfrac{-h}{h}=-1,
+\end{aligned}$$ and so $f$ is differentiable for any $x<0$.
+
+For $x=0$ we have to investigate $$\begin{aligned}
+f'(0) &=  \lim _{h\rightarrow 0}\dfrac{f(0+h)-f(0)}{h}\\
+&=  \lim _{h\rightarrow 0} \dfrac{|0+h|-|0|}{h} \quad (\text{if it exists}). 
+\end{aligned}$$ Let's compute the left and right limits separately; $$\begin{aligned}
+\lim _{h\rightarrow 0^+} \dfrac{|0+h|-|0|}{h} &=  \lim _{h\rightarrow 0^+}\dfrac{|h|}{h}=\lim _{h\rightarrow 0^+} 1=1.\\
+\lim _{h\rightarrow 0^-} \dfrac{|0+h|-|0|}{h} &=  \lim _{h\rightarrow 0^-}\dfrac{|h|}{h}=\lim _{h\rightarrow 0^-} (-1)=-1.
+\end{aligned}$$ Since these limits are different $f'(0)$ does not exist. Thus, $f$ is differentiable at all $x$ except $0$.
+
+## Differentiation Techniques (Finding Derivatives)
+
+1.  $$f'(x_0)=\lim _{h\rightarrow 0}\dfrac{f(x_0+h)-f(x_0)}{h}$$ if this limit exists.
+
+2.  The derivative of any constant function is zero, i.e., $c'=0$.
+
+3.  For any real number $n$, $$(x^n)'=nx^{n-1}.$$ When differentiating, results can be expressed in a number of ways. For example, (i)  if $y=3x^2$ then $\dfrac{dy}{dx}=6x$, (ii)  if $f(x)=3x^2$ then $f'(x)=6x$, (iii)  the differential coefficient of $3x^2$ is $6x$.
+    For example, if $f(x)=\sqrt{x}=x^{\frac{1}{2}}$, then $f'(x)=\dfrac{1}{2}x^{\frac{1}{2}-1}=\frac{1}{2}x^{-\frac{1}{2}}=\dfrac{1}{2\sqrt{x}}$.
+    **You Try It:** Using the general rule, differentiate the following with respect to $x$ :
+    (a)  $f(x)=5x^7$ (b)  $f(x)=\dfrac{4}{x^2}$.
+
+4.  For any constant $c$, $(cf(x))'=cf'(x)$. For example, $(5x^3)'=5(x^3)'=5(3x^2)=15x^2$.
+
+5.  The derivative of a sum (difference) is the sum (difference) of the derivatives, $$(f(x)\pm g(x))'=f'(x)\pm g'(x).$$ For example, $$(3x^5-2x^2+1)'=(3x^5)'-(2x^2)'+1'=3(x^5)'-2(x^2)'+0=3(5x^4)-2(2x)=15x^4-4x.$$
+
+6.  Product Rule $$(f(x)g(x))'=f(x)g'(x)+g(x)f'(x).$$
+
+7.  Quotient Rule $$\left(\dfrac{f(x)}{g(x)}\right)'=\dfrac{g(x)f'(x)-f(x)g'(x)}{(g(x))^2}.$$
+
+8.  **Parametric Equations.** If the coordinates $(x,y)$ of a point $P$ on a curve are given as functions $x=f(u)$ and $y=g(u)$ of a third variable or *parameter* $u$, the equations $x=f(u)$ and $y=g(u)$ are called *parametric equations of the curve*. For example, $x=\frac{1}{2}t, \, y=4-t^2$ or $x=\cos \theta, \, y=4\sin ^2 \theta$.
+
+    **The First Derivative** $\dfrac{dy}{dx}$ is given by $$\dfrac{dy}{dx} =\dfrac{dy/ du}{dx/ du}.$$ **The Second Derivative** $\dfrac{d^2y }{dx^2}$ is given by $$\dfrac{d^2y}{dx^2} =\dfrac{d}{du}\left( \dfrac{dy}{dx}\right)\dfrac{du}{dx}.$$ **Example:** Find $\dfrac{dy}{dx}$ and $\dfrac{d^2y}{dx^2}$ given $x=\theta-\sin \theta$ and $y=1-\cos \theta$.
+
+    **Solution:** Note that $\dfrac{dx}{d\theta}=1-\cos \theta$ and $\dfrac{dy}{d\theta}=\sin \theta$, so $$\dfrac{dy}{dx} =\dfrac{dy/ d\theta}{dx/ d\theta}=\dfrac{\sin \theta}{1-\cos \theta}.$$ Also $$\begin{aligned}
+    \dfrac{d^2y}{dx^2} &=  \dfrac{d}{d\theta}\left( \dfrac{\sin \theta}{1-\cos \theta}\right)\dfrac{d\theta}{dx}\\
+    &=  \dfrac{\cos \theta -1}{(1-\cos \theta)^2}\cdot \dfrac{1}{1-\cos \theta} =-\dfrac{1}{(1-\cos \theta)^2}.
+    \end{aligned}$$ **Example:** Find $\dfrac{dy}{dx}$ and $\dfrac{d^2y}{dx^2}$ given $x=e^t\cos t$ and $y=e^t\sin t$.
+
+    **Solution:** Note that $\dfrac{dx}{dt}=e^t(\cos t -\sin t)$ and $\dfrac{dy}{dt}=e^t(\sin t +\cos t)$, so $$\dfrac{dy}{dx} =\dfrac{dy/ dt}{dx/ dt}=\dfrac{\sin t +\cos t}{\cos t -\sin t}.$$ Also $$\begin{aligned}
+    \dfrac{d^2y}{dx^2} &=  \dfrac{d}{dt}\left(\dfrac{\sin t +\cos t}{\cos t -\sin t} \right)\dfrac{dt}{dx}\\
+    &=  \dfrac{2}{(\cos t - \sin t)^2} \cdot \dfrac{1}{e^t(\cos t -\sin t)} =\dfrac{2}{e^t(\cos t -\sin t)^3}.
+    \end{aligned}$$
+
+::: {#thm-differentiation-1}
+
+If $f(x)=c$ is a constant function, then $f'(x)=0$ for all real numbers $x$.
+
+:::
+
+::: {.proof}
+
+Observe that $f'(x)=\displaystyle \lim _{h\rightarrow 0}\dfrac{f(x+h)-f(x)}{h}=\displaystyle \dfrac{c-c}{h}=0$.
+
+:::
+
+::: {#thm-differentiation-2}
+## Product Rule
+
+If $f$ and $g$ are both differentiable at $x$, then the product function $fg$ is also differentiable at $x$ and $(fg)'(x)=f(x)g'(x)+g(x)f'(x)$.
+
+:::
+
+::: {.proof}
+
+$$(fg)'(x)=\lim _{h\rightarrow 0}\dfrac{f(x+h)g(x+h)-f(x)g(x)}{h}.$$ Trick of adding and subtracting $f(x+h)g(x)$ to the numerator, $$\begin{aligned}
+\lim _{h\rightarrow 0}\dfrac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h} &= \\
+\lim _{h\rightarrow 0} {f(x+h)}\lim _{h\rightarrow 0}\dfrac{g(x+h)-g(x)}{h}+g(x)\lim _{h\rightarrow 0}\dfrac{f(x+h)-f(x)}{h} &= \\
+&f(x)g'(x)+g(x)f'(x).
+\end{aligned}$$
+
+:::
+
+::: {#thm-differentiation-3}
+
+If $g$ is differentiable at $x$ and $g(x)\neq 0$, then $$\left(\dfrac{1}{g}\right)'(x)=-\dfrac{g'(x)}{(g(x))^2}.$$
+
+:::
+
+::: {.proof}
+
+$$\begin{aligned}
+\lim _{h\rightarrow 0} \dfrac{\frac{1}{g(x+h)}-\frac{1}{g(x)}}{h} &=  \lim _{h\rightarrow 0}\dfrac{g(x)-g(x+h)}{h(g(x))(g(x+h))}\\
+&=  \lim _{h\rightarrow 0} \dfrac{-(g(x+h)-g(x))}{h}\dfrac{1}{g(x)g(x+h)}\\
+&=  \lim _{h\rightarrow 0} \dfrac{-(g(x+h)-g(x))}{h} \lim _{h\rightarrow 0}\dfrac{1}{g(x)g(x+h)}\\
+&=  -g'(x)\dfrac{1}{(g(x))^2}.
+\end{aligned}$$
+
+:::
+
+::: {#thm-differentiation-4}
+
+If $f$ and $g$ are differentiable at $x$ and $g(x)\neq 0$, then $\dfrac{f}{g}$ is differentiable at $x$ and $\left(\dfrac{f}{g}\right)'(x)=\dfrac{g(x)f'(x)-f(x)g'(x)}{(g(x))^2}$.
+
+:::
+
+::: {.proof}
+
+Since $\dfrac{f}{g}=f\left(\dfrac{1}{g}\right)$, we have $$\begin{aligned}
+\left(\dfrac{f}{g}\right)'(x) &= \left(f\cdot \dfrac{1}{g}\right)'(x)\\
+&=  f'(x)\dfrac{1}{g(x)}+f(x)\left(\dfrac{1}{g}\right)'(x)\\
+&=  \dfrac{f'(x)}{g(x)}+f(x)\left(-\dfrac{g'(x)}{(g(x))^2}\right)\\
+&=  \dfrac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2}.
+\end{aligned}$$
+
+:::
+
+**Example:** $f(x)=\dfrac{x^2-1}{x^2+1}$, then $f'(x)=\dfrac{(x^2+1)(2x)-(x^2-1)(2x)}{(x^2+1)^2}=\dfrac{4x}{(x^2+1)^2}$.
+
+**Example:** If $f(x)=\dfrac{x}{x^2+1}$, then $f'(x)=\dfrac{(x^2+1)-x(2x)}{(x^2+1)^2}=\dfrac{1-x^2}{(x^2+1)^2}$.
+
+**Example:** If $f(x)=\dfrac{1}{x}$, then $f'(x)=-\dfrac{1}{x^2}$.
+
+**Example:** If $x=\cos t$ and $y=t\sin t$, find $\dfrac{dy}{dx}$.
+
+**Solution:** $$\dfrac{dy}{dx}=\dfrac{\dfrac{d}{dt}(t\sin t)}{\dfrac{d}{dt}(\cos t)}=\dfrac{\sin t+t\cos t}{-\sin t}.$$
+
+## Derivatives of Trigonometric Functions
+
+Recall : $$\lim _{h\rightarrow 0} \dfrac{\sin h}{ h}=1 \quad \text{and} \quad \lim _{h\rightarrow 0} \dfrac{1-\cos h}{h}=0.$$ $$\begin{aligned}
+(\sin x)' &=  \lim _{h\rightarrow 0} \dfrac{\sin (x+h)-\sin x}{h}\\
+&=  \lim _{h\rightarrow 0} \dfrac{\sin x \cos h +\cos x \sin h -\sin x}{h}\\
+&=  \lim _{h\rightarrow 0} \dfrac{\sin x (\cos h-1)+\cos x \sin h}{h}\\
+&=  \lim _{h\rightarrow 0} \left(-\sin x \dfrac{(1-\cos h)}{h}+\left(\cos x\dfrac{\sin h}{h}\right)\right)\\
+&=  -\sin x (0)+\cos x (1).
+\end{aligned}$$ Hence $(\sin x)'=\cos x$.
+
+**Example:** Find $\dfrac{dy}{dx}$ if $y=x^3\sin x$.
+
+**Solution:** $\dfrac{dy}{dx}=(x^3\sin x)'=x^3(\sin x)'+\sin x (x^3)'=x^3\cos x +3x^2\sin x$.
+
+**Example:** Determine whether the function, $$f(x) = \left\{ 
+\begin{array}{l l}
+  x^3\sin \left(\dfrac{1}{x}\right), & \quad \text{if}~~~ x\neq 0 \\
+ 0, & \quad \text{if}~~~ x=0,\\ \end{array} \right.$$ is differentiable at $x=0$.
+
+**Solution:** Observe that $$\lim _{h\rightarrow 0} \dfrac{h^3\sin \frac{1}{h}-0}{h}=\lim _{h\rightarrow 0}h^2\sin \frac{1}{h}=0.$$
+
+**Logarithmic Functions.** Assume $a>0$ and $a\neq 1$. If $a^y=x$, then define $y=\log _a x$. Let $\ln x \equiv \log _e x$ ($\ln x$ is called the *natural logarithm* of $x$).
+
+**Basic Properties of Logarithms**
+
+1.  $\log _a 1 =0$ (In particular, $\ln 1 =0$).
+
+2.  $\log _a a=1$ (In particular, $\ln e =1$).
+
+3.  $\log _a uv=\log _a u +\log _a v$.
+
+4.  $\log _a \left(\dfrac{u}{v}\right)=\log _a u-\log _a v$.
+
+5.  $\log _a u^r =r\log _a u$.
+
+**Derivatives of $\ln x$ and $e^x$** are $\dfrac{d}{dx}e^x=e^x$ and $\dfrac{d}{dx}\ln x =\dfrac{1}{x}$. Also $\dfrac{d}{dx}(a^x)=a^x\ln x, \, a>0$.
+
+**Example:** Calculate the derivative $\dfrac{d}{dx}[(\sin x +x)\cdot (x^3-\ln x)]$.
+
+**Solution:** We know that $\dfrac{d}{dx} \sin x =\cos x, \dfrac{d}{dx} x=1, \, \dfrac{d}{dx}x^3=3x^2$ and $\dfrac{d}{dx}\ln x =\dfrac{1}{x}$. Therefore, by the addition rule, $$\dfrac{d}{dx} (\sin x +x) =\dfrac{d}{dx}\sin x +\dfrac{d}{dx} x =\cos x +1$$ and $$\dfrac{d}{dx} (x^3-\ln x)=\dfrac{d}{dx}x^3-\dfrac{d}{dx}\ln x =3x^2-\dfrac{1}{x}.$$ Now we may conclude the calculation by applying the product rule; $$\begin{aligned}
+\dfrac{d}{dx}[(\sin x +x)\cdot(x^3-\ln x)] &=  \dfrac{d}{dx} (\sin x +x)\cdot (x^3-\ln x) +(\sin x +x)\cdot \dfrac{d}{dx}(x^3-\ln x)\\
+&=  (\cos x +1)\cdot (x^3-\ln x) +(\sin x +x)\cdot \left(3x^2-\dfrac{1}{x}\right)\\
+&=  4x^3-1 +x^3\cos x +3x^2\sin x -\dfrac{1}{x}\sin x -\ln x \cos x -\ln x. 
+\end{aligned}$$
+
+**You Try It:** Calculate the derivative $$\dfrac{d}{dx}\left(\sin x \cdot \left( \cos x -\dfrac{x}{e^x+\ln x}\right)\right).$$
+
+## Derivative of a Composition \[The Chain Rule\]
+
+We calculate the derivative of a composition by $$[f\circ g(x)]'=f'(g(x))\cdot g'(x).$$ If $y=f(u)$ where $u=g(x)$, then $$\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot \dfrac{du}{dx}=f'(u)\dfrac{du}{dx}=f'(g(x))g'(x).$$ Similarly, if $y=f(u)$ where $u=g(v)$ and $v=h(x)$, then $$\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot \dfrac{du}{dv}\cdot \dfrac{dv}{dx}.$$
+
+**Example:** Calculate the derivative $\dfrac{d}{dx}(\sin (x^3-x^2))$.
+
+**Solution:** This is the composition of functions, so we must apply the Chain Rule. It is essential to recognize what function will play the role of $f$ and what function will play the role of $g$. Notice that, if $x$ is the variable, then $x^3-x^2$ is applied first and $\sin$ applied next. So it must be that $g(x)=x^3-x^2$ and $f(s)=\sin s$. Notice that $\dfrac{d}{ds}f(s)=\cos s$ and $\dfrac{d}{dx}g(x)=3x^2-2x$. Then $$\sin (x^3-x^2) =f\circ g(x)$$ and $$\begin{aligned}
+\dfrac{d}{dx}(\sin (x^3-x^2)) &=  \dfrac{d}{dx}(f\circ g(x))\\
+&=  \left[\dfrac{df}{ds}(g(x)) \right]\cdot \dfrac{d}{dx}g(x)\\
+&=  \cos (g(x)) \cdot (3x^2-2x)\\
+&=  [\cos (x^3-x^2)]\cdot (3x^2-2x).
+\end{aligned}$$
+
+**Example:** Calculate the derivative $\dfrac{d}{dx}\ln \left(\dfrac{x^2}{x-2}\right)$.
+
+**Solution:** Let $h(x)=\ln \left(\dfrac{x^2}{x-2}\right)$. Then $h=f\circ g$, where $f(s)=\ln s$ and $g(x)=\dfrac{x^2}{x-2}$. So $\dfrac{d}{ds}f(s)=\dfrac{1}{s}$ and $\dfrac{d}{dx} g(x)=\dfrac{(x-2)\cdot 2x-x^2\cdot 1}{(x-2)^2}=\dfrac{x^2-4x}{(x-2)^2}$. As a result, $$\begin{aligned}
+\dfrac{d}{dx}h(x) &=  \dfrac{d}{dx} (f\circ g)\\
+&=  \left[\dfrac{df}{ds}(g(x)) \right]\cdot \dfrac{d}{dx}g(x)\\
+&=  \dfrac{1}{g(x)}\cdot \dfrac{x^2-4x}{(x-2)^2}\\
+&=  \dfrac{1}{\dfrac{x^2}{x-2}} \cdot \dfrac{x^2-4x}{(x-2)^2}\\
+&=  \dfrac{x-4}{x(x-2)}.
+\end{aligned}$$
+
+**You Try It:** Calculate the derivative of $\tan (e^x-x)$.
+
+## Continuity and Differentiation
+
+What is the relationship between continuity and differentiation? It appears that functions that have derivatives must be continuous.
+
+::: {#thm-differentiation-5}
+
+If a function $f$ is differentiable at a point $x$, then it is continuous at $x$.
+
+:::
+
+::: {.proof}
+
+We want to show that $f$ is continuous at $x$, i.e., $\displaystyle \lim _{t\rightarrow x} f(t)=f(x)$ or $\displaystyle \lim _{h\rightarrow 0} f(x+h)=f(x)$, where $h=t-x$. It will be sufficient to show that $\displaystyle \lim _{h\rightarrow 0} [f(x+h)-f(x)]=0$.
+
+Now, $$\begin{aligned}
+\lim _{h\rightarrow 0} [f(x+h)-f(x)] &=  \lim _{h\rightarrow 0} \left[\dfrac{f(x+h)-f(x)}{h}\right]h\\
+&=  \lim _{h\rightarrow 0} \dfrac{f(x+h)-f(x)}{h} \lim _{h\rightarrow 0} h \\
+&=  f'(x)\cdot 0 \\
+&=  0, 
+\end{aligned}$$ because $f'(x)$ is finite. Thus $f$ is continuous at $x$.
+
+:::
+
+**Converse is false:** For example, the function $f(x)=|x|$ is continuous at $x=0$, but it is not differentiable there.
+
+## Higher Order Derivatives
+
+If $f(x)$ is differentiable in an interval, its derivative is given by $f'(x), \, y'$ or $\dfrac{dy}{dx}$ where $y=f(x)$.
+
+If $f'(x)$ is also differentiable in the interval, its derivative is denoted by $f''(x), \, y''$ or $\dfrac{d}{dx}\left(\dfrac{dy}{dx}\right)=\dfrac{d^2y}{dx^2}$.
+
+Similarly, the $nth$ derivative of $f(x)$, if it exists, is denoted by $f^{(n)}, \, y^{(n)}$ or $\dfrac{d^ny}{dx^n}$ where $n$ is called the order of the derivative.
+
+**Example:** Let $y=f(x)=\frac{1}{2}x^4-3x^2+1$.
+
+**Solution:** Derivative $y'=f'(x)=\dfrac{d}{dx}(\frac{1}{2}x^4-3x^2+1)=2x^3-6x$.
+
+Second derivative $y''=f''(x)=\dfrac{d^2y}{dx^2}=\dfrac{d}{dx}(2x^3-6x)=6x^2-6$.
+
+Third derivative $y'''=f'''(x)=\dfrac{d^3y}{dx^3}=\dfrac{d}{dx}(6x^2-6)=12x$.
+
+Fourth derivative $y^{(4)}=f^{(4)}(x)=\dfrac{d^4y}{dx^4}=\dfrac{d}{dx}(12x)=12$.
+
+## Implicit Differentiation
+
+Compare
+
+1.  $x^2 -y^3 =3 \Longleftrightarrow y=\sqrt[3]{x^2-3}$.
+
+2.  $x^2+y^2=1 \Longleftrightarrow y=\pm \sqrt{1-x^2}$.
+
+3.  $x^3+y^2=3xy \Longleftrightarrow ????????$.
+
+**Implicit Functions.** A function in which the dependent variable is expressed solely in terms of the independent variable $x$, namely $y=f(x)$, is said to be an **explicit function**, for example, $y=\frac{1}{2}x^3-1$. An equation $f(x,y)=0$, on perhaps certain restricted ranges of the variables, is said to define *$y$ implicitly* as a function of $x$.
+
+**Example:** (a)  The equation $xy +x-2y-1=0$, with $x\neq 2$, defines the function $y=\dfrac{1-x}{x-2}$. (b)  The equation $4x^2+9y^2-36=0$ defines the function $y=\frac{2}{3}\sqrt{9-x^2}$ when $|x|\leq 3$ and $y\geq 0$ and the function $y=-\frac{2}{3}\sqrt{9-x^2}$ when $|x|\leq 3$ and $y\leq 0$.
+
+The derivative $y'$ may be obtained by one of the following procedures:
+
+1.  Solve, when possible, for $y$ and differentiate with respect to $x$.
+
+2.  Thinking of $y$ as a function of $x$, differentiate both sides of the given equation with respect to $x$ and solve the resulting relation for $y'$. This differentiation process is known as *implicit differentiation*.
+
+**Example:** Find $\dfrac{dy}{dx}$ if $x^2+y^2=4$.
+
+**Solution:** We differentiate both sides of the equation $$\begin{aligned}
+\dfrac{d}{dx}x^2 +\dfrac{d}{dx}y^2 &=  \dfrac{d}{dx} 4\\
+2x +2y\dfrac{dy}{dx} &=0 .
+\end{aligned}$$ Solving the derivative yields $$\dfrac{dy}{dy}=-\dfrac{x}{y}.$$
+
+**Example:** Find $\dfrac{d^2y}{dx^2}$ if $x^2+y^2=4$.
+
+**Solution:** From the above example, we already know that the first derivative is $$\dfrac{dy}{dx}=-\dfrac{x}{y}.$$ Hence by the Quotient Rule $$\begin{aligned}
+\dfrac{d^2y}{dx^2}  &=  -\dfrac{d}{dx}\left(\dfrac{x}{y}\right)\\
+&=  -\dfrac{y\cdot 1-x\cdot \dfrac{dy}{dx}}{y^2}\\
+&=  -\dfrac{y-x\left(-\dfrac{x}{y}\right)}{y^2} \quad \boxed{\text{Substituting for $\dfrac{dy}{dx}$}}\\
+&=  -\dfrac{y^2+x^2}{y^3}.
+\end{aligned}$$ Noting that $x^2+y^2=4$ permits us to write the second derivative as $$\dfrac{d^2y}{dx^2}=-\dfrac{4}{y^3}.$$
+
+**Example:** Find $\dfrac{dy}{dx}$ if $\sin y=y\cos 2x$.
+
+**Solution:** $$\begin{aligned}
+\dfrac{d}{dx}\sin y &=  \dfrac{d}{dx}y\cos 2x\\
+\cos y \dfrac{dy}{dx} &=  y(-\sin 2x \cdot 2)+\cos 2x \dfrac{dy}{dx}\\
+(\cos y-\cos 2x)\dfrac{dy}{dx} &=  -2y\sin 2x\\
+\dfrac{dy}{dx} &=  -\dfrac{2y\sin 2x}{\cos y-\cos 2x}.
+\end{aligned}$$ **Example:** Find $y'$, given $xy+x-2y-1=0$.
+
+**Solution:** We have $$x\dfrac{d}{dx}(y)+y\dfrac{d}{dx}(x)+\dfrac{d}{dx}(x)-2\dfrac{d}{dx}(y)-\dfrac{d}{dx}(1)=\dfrac{d}{dx}(0)$$ or $xy'+y+1-2y'=0$, then $y'=\dfrac{1+y}{2-x}$.
+
+**Example:** Find $y'$, given $x^2y-xy^2+x^2+y^2=0$.
+
+**Solution:** $$\begin{aligned}
+\dfrac{d}{dx}(x^2y)-\dfrac{d}{dx}(xy^2)+\dfrac{d}{dx}(x^2)+\dfrac{d}{dx}(y^2) &=  0\\
+&x^2\dfrac{d}{dx}(y)+y\dfrac{d}{dx}(x^2)-x\dfrac{d}{dx}(y^2)-y^2\dfrac{d}{dx}(x)+\dfrac{d}{dx}(x^2)+\dfrac{d}{dx}(y^2) 
+&=  0.
+\end{aligned}$$ Hence, $x^2y'+2xy-2xyy'-y^2+2x+2yy'=0$ and $y'=\dfrac{y^2-2x-2xy}{x^2+2y-2xy}$.
+
+**Example:** Find $y'$ and $y''$, given $x^2-xy+y^2=3$.
+
+**Solution:** $$\dfrac{d}{dx}(x^2)-\dfrac{d}{dx}(xy)=\dfrac{d}{dx}(y^2)=2x-xy'-y+2yy'=0. \quad \text{So} \quad  y'=\dfrac{2x-y}{x-2y}.$$ Then $$\begin{aligned}
+y''=\dfrac{(x-2y)\dfrac{d}{dx}(2x-y)-(2x-y)\dfrac{d}{dx}(x-2y)}{(x-2y)^2} &=  \dfrac{(x-2y)(2-y')-(2x-y)(1-2y')}{(x-2y)^2}\\
+&=  \dfrac{3xy'-3y}{(x-2y)^2} = \dfrac{3x\left(\dfrac{2x-y}{x-2y}\right)-3y}{(x-2y)^2} =\dfrac{6(x^2-xy+y^2)}{(x-2y)^2}\\
+&=  \dfrac{18}{(x-2y)^2}.
+\end{aligned}$$
+
+**You Try It:** Find $y''$, given $x^3-3xy+y^3=1$.
+
+## Logarithmic Differentiation
+
+Take natural logarithm ($\ln$) both sides, differentiate implicitly and solve for $y'$.
+
+**Example:** Compute $y'$ if $y=\dfrac{x^2\sqrt[3]{7x-14}}{(1+x^2)^4}$.
+
+**Solution:** $y=\dfrac{x^2\sqrt[3]{7x-14}}{(1+x^2)^4} \Rightarrow \ln y =\ln \left(\dfrac{x^2\sqrt[3]{7x-14}}{(1+x^2)^4}\right)$. $$\begin{aligned}
+\ln y &=  2\ln x +\frac{1}{3}\ln (7x-14) -4\ln (1+x^2) \\
+\dfrac{1}{y}y' &=  2\left(\dfrac{1}{x}\right)+\dfrac{1}{3}\left(\dfrac{(7x-14)'}{7x-14}\right)-4\left(\dfrac{(1+x^2)'}{1+x^2}\right) \\
+&=  \dfrac{2}{x} +\dfrac{7}{3(7x-14)} -\dfrac{8x}{1+x^2}\\
+y' &=  y\left(\dfrac{2}{x} +\dfrac{7}{3(7x-14)} -\dfrac{8x}{1+x^2}\right)\\
+&=  \dfrac{x^2\sqrt[3]{7x-14}}{(1+x^2)^4} \left(\dfrac{2}{x} +\dfrac{7}{3(7x-14)} -\dfrac{8x}{1+x^2}\right).
+\end{aligned}$$
+
+## Derivatives of Inverse Trigonometric Functions
+
+If $x=\sin y$, the inverse function is written $y=\sin ^{-1} x$ or $y=\arcsin x$. The inverse trigonometric functions are *multivalued* functions.
+
+**Example:** Find the derivative of $y=\sin ^{-1} x$.
+
+**Solution:** Differentiate implicitly with respect to $x$. Then $\sin y =x$. Hence, $$\begin{aligned}
+(\sin y)' &=  x'\\
+\cos y y' &=  1\\
+y' &=  \dfrac{1}{\cos y} \\
+y' &=  \dfrac{1}{\sqrt{1-\sin ^2 y}}\\
+&=  \dfrac{1}{\sqrt{1-x^2}}.
+\end{aligned}$$
+
+**Some Derivatives.** $\dfrac{d}{dx} (\cos ^{-1} x)=-\dfrac{1}{\sqrt{1-x^2}}, \quad \dfrac{d}{dx}(\cot ^{-1} x) =-\dfrac{1}{1+x^2}, \quad \dfrac{d}{dx}(\sec ^{-1}x)=\dfrac{1}{x\sqrt{x^2-1}}$.
+
+**You Try It:** Show that the derivative of $\tan ^{-1} x =\dfrac{1}{1+x^2}$.
+
+## Tutorial questions {.unnumbered}
+
+::: {.tutorial}
+
+1.  Show directly from definition that the derivative of $f(x)=x^3$ is $3x^2$.
+
+2.  Show from definition that $\dfrac{d}{dx}(\sqrt{x})=\dfrac{1}{2\sqrt{x}}$.
+
+3.  Determine whether each of the following functions is differentiable at $x=0$.
+    (i)  $f(x) = \left\{ 
+    \begin{array}{l l}
+      x^3\sin \left(\frac{1}{x}\right), & \quad x\neq 0\\
+      0, & \quad x=0\\ \end{array} \right.$ (ii)  $f(x)=x|x|$ (iii)  $f(x) = \left\{ 
+    \begin{array}{l l}
+      \dfrac{x-|x|}{x}, & \quad x\neq 0\\
+      0, & \quad x=0\\ \end{array} \right.$.
+
+4.  Show that $f(x)=\cos x$ is differentiable at any $x \in \mathbb{R}$ and that $f'(x)=-\sin x$.
+
+5.  Find $\dfrac{dy}{dx}$ for each of the following functions
+    (i)  $y=\sin ^2(3x+\frac{\pi}{6})$ (ii)  $y=(ax+b)^m(cx+d)^n$ (iii)  $y=\cos (x^2-3x+1)$
+    (iv)  $y=\dfrac{x}{1+x^2}$ (v)  $y=\sqrt{\dfrac{ax+b}{cx+d}}$ (vi)  $e^{xy}+y\ln x=\cos 2x$ (vii)  $y=\sec ^{-1} x$
+    (viii)  $x=t\cos t$ and $y=t\sin t$ (ix)  $xy=\sin (x+y)$ (x)  $\dfrac{x}{y^2}+\dfrac{y^2}{x}=5$
+    (xi)  $\cos (x-y)=ye^{xy}$ (xii)  $x=\sec t$ and $y=\tan t$ (xiii)  $xy^3-3x^2=xy+5$.
+
+6.  Use logarithmic differentiation to find derivatives of each of the following functions
+    (i)  $y=x^x, x>0$ (ii)  $y=x^{\ln x}, x>0$ (iii)  $y=\sqrt[3]{\dfrac{(x+1)(x+2)}{(x^2+1)(x^2+2)}}$
+    (iii)  $y=\sqrt{x+1}\sqrt{x+2}\sqrt[4]{x+3}$ (iv)  $y(x)=y_1(x)y_2(x)\cdots y_n(x)$ (v)  $y=x^{\sqrt{x}}, x>0$
+    (vi)  $y=\dfrac{\sqrt[3]{x^4+6x^2}(8x+3)^5}{(2x^2+7)^{\frac{2}{3}}}$ (vii)  $y=(x^2+1)^{(x+1)^x}, x>-1$ (viii)  $y=x^x2^x$
+    (ix)  $y=x^{x^x}$ (x)  $y=x^{\cos x}$ (xi)  $y=x^{(x+1)^{\ln x}}$ (xii)  $y=(\ln x)^x$ (xiii)  $y=\dfrac{(x^2+1)^x}{x^2}$.
+
+7.  Use implicit differentiation to find $\dfrac{dy}{dx}$.
+    (i)  $(y-1)^2=4(x+2)$ (ii)  $(x^2+y^2)^6=x^3-y^3$ (iii)  $y^4-y^2=10x-3$ (iv)  $y=\sin xy$
+    (v)  $\dfrac{x+y}{x-y}=x$ (vi)  $xy=\sin (x+y)$ (vii)  $x+y=\cos xy$ (viii)  $x\sin y-y\cos x=1$.
+
+8.  Find $\dfrac{dy}{dx}$ if $xy^2+4y^3+3x=0$ at $(1,-1)$.
+
+9.  Find $\dfrac{d^2y}{dx^2}$.
+    (i)  $4y^3=6x^2+1$ (ii)  $xy^4=5$ (iii)  $x+y=\sin y$ (iv)  $y^2-x^2=\tan 2x$ (v)  $x^3+y^3=27$.
+
+10. Use implicit differentiation to find $\dfrac{dy}{dx}$. Then, solve for $y$ explicitly in terms of $x$ and differentiate. Show that the two answers are equivalent.
+    (i)  $x^3y=x+1$ (ii)  $y\sin x =x-2y$.
+
+11. If $y=\tan x$, prove that $y'''=2(1+y^2)(1+3y^2)$.
+
+12. Given $y^2\sin x +y =\tan ^{-1} x$. find $y'$.
+
+13. Find the first derivatives of the following functions
+
+    ::: {.labelled}
+
+    - \(i\) $y=\sin ^{-1} (2x-3)$.
+
+    - \(ii\) $y=\tan ^{-1} 3x^2$.
+
+    - \(iii\) $y=x\sqrt{a^2-x^2}+a^2\sin ^{-1} \left(\dfrac{x}{a}\right)$.
+
+    - \(iv\) $y=x\csc ^{-1} \left(\dfrac{1}{x}\right) +\sqrt{1-x^2}$.
+
+    - \(v\) $y=\dfrac{1}{ab}\tan ^{-1}\left(\dfrac{b}{a} \tan x\right)$.
+
+    :::
+
+14. Find the first derivatives of the following functions
+
+    ::: {.labelled}
+
+    - \(i\) $y=\ln (x^3+2)(x^2+3)$.
+
+    - \(ii\) $y=\ln \left(\dfrac{x^4}{(3x-4)^2}\right)$.
+
+    - \(iii\) $y=x^23^x$.
+
+    - \(iv\) $y=\ln (x+\sqrt{1+x^2})$.
+
+    - \(v\) $y=\ln (\ln \tan x)$.
+
+    - \(vi\) $y=\tan ^2 e^{3x}$.
+
+    :::
+
+15. If $y=x^2e^x$, show that $y'''=(x^2+6x+6)e^x$.
+
+16. If $y=e^{-2x}(\sin 2x +\cos 2x)$. Show that $y''+4y'+8y=0$.
+
+17. Find $\dfrac{dy}{dx}$ and $\dfrac{d^2y}{dx^2}$
+
+    ::: {.labelled}
+
+    - \(i\) $x=2+t, \, y=1+t^2$.
+
+    - \(ii\) $x=2\sin t, \, y=\cos 2t$.
+
+    - \(iii\) $x=\cos ^3 \theta , \, y=\sin ^3 \theta$.
+
+    - \(iv\) $x=a(\cos \phi +\phi \sin \phi), \, y=a(\sin \phi -\phi \cos \phi)$.
+
+    - \(v\) $x=t+\dfrac{1}{t}, \, y=t+1$.
+
+    :::
+
+
+:::

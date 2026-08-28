@@ -1,0 +1,99 @@
+project:
+  type: book
+  output-dir: _site
+  resources:
+    - "Chapter_*/*.pdf"
+    - "HMTH101_Calculus_1_Full_Notes/*.pdf"
+    - "Past_Exams/*.pdf"
+
+book:
+  title: "Calculus of Single Variables"
+  subtitle: "HMTH101 — University of Zimbabwe"
+  author: "G. Nhawu"
+  date: last-modified
+  date-format: "D MMMM YYYY"
+  search: true
+  reader-mode: true
+  page-navigation: true
+  favicon: images/uz1.png
+  chapters:
+    - index.qmd
+    - part: "I. Numbers, functions and sequences"
+      chapters:
+        - chapters/01-basics.qmd
+        - chapters/02-functions.qmd
+        - chapters/03-sequences.qmd
+    - part: "II. Limits and the derivative"
+      chapters:
+        - chapters/04-limits-and-continuity.qmd
+        - chapters/05-differentiation.qmd
+        - chapters/06-applications-of-the-derivative.qmd
+    - part: "III. Integration"
+      chapters:
+        - chapters/07-integration.qmd
+  appendices:
+    - appendix/downloads.qmd
+    - appendix/past-exams.qmd
+    - appendix/about.qmd
+  sidebar:
+    style: docked
+    collapse-level: 1
+    border: false
+  page-footer:
+    left: "HMTH101 — Calculus of Single Variables · G. Nhawu"
+    center: "Web edition by Donald Zvadah"
+    right: "Built with [Quarto](https://quarto.org)"
+
+crossref:
+  thm-title: "Theorem"
+  lem-title: "Lemma"
+  cor-title: "Corollary"
+  prp-title: "Proposition"
+  def-title: "Definition"
+  exm-title: "Example"
+  exr-title: "Exercise"
+  thm-prefix: "Theorem"
+  lem-prefix: "Lemma"
+  cor-prefix: "Corollary"
+  prp-prefix: "Proposition"
+  def-prefix: "Definition"
+  exm-prefix: "Example"
+  exr-prefix: "Exercise"
+  eq-prefix: ""
+  chapters: true
+
+format:
+  html:
+    theme:
+      light: [cosmo, assets/theme-light.scss]
+      dark: [darkly, assets/theme-dark.scss]
+    css: style.css
+    grid:
+      sidebar-width: 280px
+      body-width: 1400px
+      margin-width: 230px
+      gutter-width: 1.6rem
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    number-sections: true
+    number-depth: 2
+    smooth-scroll: true
+    link-external-newwindow: true
+    link-external-icon: false
+    footnotes-hover: true
+    code-copy: true
+    code-overflow: wrap
+    fig-align: center
+    tbl-cap-location: bottom
+    html-math-method: mathjax
+    anchor-sections: true
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto
+
+lang: en
+editor: source

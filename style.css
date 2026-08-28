@@ -1,0 +1,392 @@
+/* ==========================================================================
+   HMTH101 Calculus 1 — shared structural styles
+   Colour values come from assets/theme-light.scss and assets/theme-dark.scss
+   via the --cal-* custom properties, so this file works in both themes.
+   ========================================================================== */
+
+/* --- Page rhythm ---------------------------------------------------------- */
+
+main.content {
+  max-width: none;
+  padding-right: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  line-height: 1.15;
+  margin-bottom: 1.4rem;
+}
+
+/* Chapter titles are single long words often enough ("Differentiation") that a
+   narrow viewport needs somewhere to break them. */
+
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+  margin-top: 3.25rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--cal-rule);
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: 2.25rem;
+}
+
+h4 {
+  font-size: 1.08rem;
+  margin-top: 1.6rem;
+  color: var(--cal-muted);
+}
+
+p,
+li {
+  line-height: 1.75;
+}
+
+/* Prose fills the body column. The column itself is capped at $grid-body-width
+   (see assets/theme-*.scss), which is what keeps lines sane on wide monitors. */
+
+/* Keep the sidebar quiet so the text is the loudest thing on the page. */
+
+.sidebar-navigation .sidebar-item-container .sidebar-item-text {
+  font-size: 0.9rem;
+}
+
+.sidebar-navigation .sidebar-section .sidebar-item {
+  font-size: 0.88rem;
+}
+
+#quarto-sidebar .sidebar-menu-container > ul > li > .sidebar-item-container {
+  font-weight: 600;
+}
+
+/* --- Chapter epigraphs ---------------------------------------------------
+   Every chapter in the printed notes opens with an unrelated quotation. They
+   are kept, set quietly enough that nobody mistakes one for the first line of
+   the mathematics.
+   -------------------------------------------------------------------------- */
+
+.epigraph {
+  margin: 0 0 2.75rem;
+  padding: 0 0 0 1.2rem;
+  border-left: 3px solid var(--cal-rule);
+  font-size: 1.02rem;
+  font-style: italic;
+  color: var(--cal-muted);
+  max-width: 46rem;
+}
+
+.epigraph p:last-child {
+  margin-bottom: 0;
+}
+
+.epigraph-by {
+  font-style: normal;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- Numbered environments ------------------------------------------------
+   Quarto emits every numbered block as `.theorem`, with a second class naming
+   the type (`.theorem.definition`, `.theorem.corollary`, …) and a shared
+   `.theorem-title` span. The type-specific rules below must therefore come
+   after the generic `.theorem` rule and match on both classes to win.
+   -------------------------------------------------------------------------- */
+
+.theorem {
+  margin: 1.6rem 0;
+  padding: 0.9rem 1.1rem 0.9rem 1.15rem;
+  border-left: 3px solid var(--cal-theorem);
+  border-radius: 0 6px 6px 0;
+  background: var(--cal-surface);
+  box-shadow: var(--cal-shadow);
+}
+
+.theorem > :last-child {
+  margin-bottom: 0;
+}
+
+.theorem-title {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--cal-theorem);
+}
+
+.theorem.definition {
+  border-left-color: var(--cal-definition);
+}
+
+.theorem.definition .theorem-title {
+  color: var(--cal-definition);
+}
+
+.theorem.example {
+  border-left-color: var(--cal-example);
+}
+
+.theorem.example .theorem-title {
+  color: var(--cal-example);
+}
+
+.theorem.exercise {
+  border-left-color: var(--cal-exercise);
+}
+
+.theorem.exercise .theorem-title {
+  color: var(--cal-exercise);
+}
+
+/* Proofs sit closer to body text: a hairline rule, not a box. */
+
+.proof,
+.remark,
+.solution {
+  margin: 1.25rem 0 1.6rem;
+  padding: 0 0 0 1.1rem;
+  border-left: 2px solid var(--cal-rule);
+  color: inherit;
+}
+
+.proof-title,
+.remark-title,
+.solution-title {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--cal-proof);
+}
+
+/* The QED mark goes on the block, not on the last paragraph: a proof that ends
+   in display maths has no inline position for it to sit at. */
+
+.proof::after {
+  content: "\25A1";
+  display: block;
+  text-align: right;
+  margin-top: -0.6rem;
+  color: var(--cal-muted);
+}
+
+/* --- Tutorial questions ---------------------------------------------------
+   Each chapter ends with the tutorial sheet from the lecture notes. It is set
+   apart so a reader scrolling for practice can find it without reading down.
+   -------------------------------------------------------------------------- */
+
+.tutorial {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.2rem 1.4rem 0.6rem;
+  border: 1px solid var(--cal-rule);
+  border-left: 4px solid var(--cal-tutorial);
+  border-radius: 8px;
+  background: var(--cal-tutorial-soft);
+}
+
+.tutorial > :first-child {
+  margin-top: 0;
+}
+
+.tutorial ol > li,
+.tutorial ul > li {
+  margin-bottom: 0.5rem;
+}
+
+.tutorial ol > li::marker {
+  color: var(--cal-tutorial);
+  font-weight: 600;
+}
+
+/* --- Labelled lists -------------------------------------------------------
+   Lists whose items carry their own label — (A1), (M2), (i) — from the
+   printed notes. The label is the marker, so the bullet is dropped.
+   -------------------------------------------------------------------------- */
+
+.labelled > ul {
+  list-style: none;
+  padding-left: 0.9rem;
+}
+
+.labelled > ul > li {
+  margin-bottom: 0.3rem;
+}
+
+/* --- Callouts ------------------------------------------------------------- */
+
+div.callout {
+  border-radius: 6px;
+  border-width: 1px;
+}
+
+div.callout.callout-style-default > .callout-header {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-size: 1.02rem;
+}
+
+/* --- Learning objectives -------------------------------------------------- */
+
+.objectives {
+  margin: 1.75rem 0 2.5rem;
+  padding: 1.15rem 1.35rem;
+  border: 1px solid var(--cal-accent-soft);
+  border-left: 4px solid var(--cal-accent);
+  border-radius: 8px;
+  background: var(--cal-accent-soft);
+}
+
+.objectives > p:first-child {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cal-accent);
+}
+
+.objectives ul {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+}
+
+.objectives li {
+  margin-bottom: 0.35rem;
+}
+
+.objectives li::marker {
+  color: var(--cal-accent);
+}
+
+/* --- Figures -------------------------------------------------------------- */
+
+.quarto-figure img,
+p > img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* The figures are scans from the printed notes and carry the paper's white
+   ground. In dark mode they get a paper margin and a border rather than an
+   inversion: inverting a hand-drawn axis makes it harder to read, not easier,
+   and a bare white rectangle on a dark page reads as a mistake. */
+
+.quarto-dark .quarto-figure img,
+.quarto-dark p > img {
+  background: #fbfbf9;
+  padding: 0.7rem;
+  border: 1px solid var(--cal-rule);
+}
+
+.center {
+  text-align: center;
+}
+
+/* --- Mathematics ---------------------------------------------------------- */
+
+mjx-container[jax="CHTML"][display="true"] {
+  margin: 1.15rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.2rem;
+}
+
+/* --- Tables --------------------------------------------------------------- */
+
+.table,
+table {
+  font-size: 0.94rem;
+}
+
+.table > thead {
+  border-bottom: 2px solid var(--cal-rule);
+}
+
+.table > thead th {
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* --- Landing page --------------------------------------------------------- */
+
+.cal-lede {
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: var(--cal-muted);
+  margin-bottom: 2rem;
+}
+
+.part-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 2.5rem;
+}
+
+.part-card {
+  background: var(--cal-surface);
+  border: 1px solid var(--cal-rule);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--cal-shadow);
+}
+
+.part-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  padding-top: 0;
+}
+
+.part-card p,
+.part-card ul {
+  font-size: 0.92rem;
+  margin-bottom: 0;
+  color: var(--cal-muted);
+}
+
+.part-card ul {
+  padding-left: 1.1rem;
+}
+
+/* Author line under the title on the landing page. */
+
+.byline {
+  font-size: 0.95rem;
+  color: var(--cal-muted);
+  margin: -0.6rem 0 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--cal-rule);
+}
+
+.byline strong {
+  color: var(--cal-accent);
+  font-weight: 600;
+}
+
+/* --- Print ---------------------------------------------------------------- */
+
+@media print {
+  .theorem {
+    box-shadow: none;
+    background: none;
+    border-left-width: 2px;
+  }
+
+  .tutorial {
+    background: none;
+  }
+}

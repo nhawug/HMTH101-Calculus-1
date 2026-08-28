@@ -1,0 +1,84 @@
+# Preface {.unnumbered}
+
+These are the HMTH101 *Calculus of Single Variables* lecture notes from the Department of Mathematics at the University of Zimbabwe, written by G. Nhawu. This is the web edition: the same notes, chapter by chapter, with the mathematics set live in the browser rather than as a page image.
+
+::: {.byline}
+Notes by **G. Nhawu**, Department of Mathematics, University of Zimbabwe.<br>
+Typesetting and web edition by **Donald Zvadah** (contributor). Nothing in the mathematics has been changed.
+:::
+
+::: {.cal-lede}
+The course runs from the construction of the real numbers to the techniques of integration, and it takes the long way deliberately. Limits are defined with $\varepsilon$ and $\delta$ before they are used, the differentiation rules are proved rather than tabulated, and the definite integral arrives as a limit of Riemann sums rather than as an antiderivative that happens to work.
+:::
+
+The following passage opens the printed notes.
+
+> Calculus is one of the milestones of Western thought. Building on ideas of Archimedes, Fermat, Newton, Leibniz, Cauchy, and many others, the calculus is arguably the cornerstone of modern science. Any well-educated person should at least be acquainted with the ideas of calculus, and a scientifically literate person must know calculus solidly. Calculus has two main aspects: differential calculus and integral calculus. Differential calculus concerns itself with rates of change. Various types of change, both mathematical and physical, are described by a mathematical quantity called the derivative. Integral calculus is concerned with a generalized type of addition, or amalgamation, of quantities. Many kinds of summation, both mathematical and physical, are described by a mathematical quantity called the integral.
+
+## What is covered
+
+::: {.part-grid}
+
+::: {.part-card}
+### 1. The Basics
+
+Number systems from $\mathbb{N}$ to $\mathbb{R}$, and the algebraic, order and completeness properties that separate them. Intervals, inequalities, the absolute value and its properties, and the principle of mathematical induction.
+:::
+
+::: {.part-card}
+### 2. Functions
+
+Domain and range, graphs and the vertical line test, bounded functions, and the elementary families. Sums, products and composition; injections, surjections and bijections; inverses and when they exist.
+:::
+
+::: {.part-card}
+### 3. Sequences
+
+Limits of sequences and the theorems that let you compute them. Sequences tending to infinity, bounded and monotonic sequences, limits of combinations, and the squeeze theorem.
+:::
+
+::: {.part-card}
+### 4. Limits and Continuity
+
+The limit of a function, first informally and then with $\varepsilon$ and $\delta$. Theorems on limits, special limits, one-sided limits and limits at infinity. Continuity at a point, on an interval, and the $\varepsilon$–$\delta$ form.
+:::
+
+::: {.part-card}
+### 5. Differentiation
+
+The derivative as a limit, and the rules — product, quotient, chain — proved from that definition. Trigonometric derivatives, higher order derivatives, implicit and logarithmic differentiation, and inverse trigonometric functions.
+:::
+
+::: {.part-card}
+### 6. Applications of the Derivative
+
+Approximation by differentials, Rolle's theorem and the mean value theorem with their corollaries, indeterminate forms and L'Hôpital's rule, extrema, concavity and points of inflection, and curve sketching.
+:::
+
+::: {.part-card}
+### 7. Integration
+
+Antiderivatives and the indefinite integral, $u$-substitution, sigma notation and summation formulas. Area under a graph, Riemann sums, the definite integral and the fundamental theorem. Integration by parts, reduction formulas, partial fractions, and trigonometric integrals.
+:::
+
+:::
+
+## How to use this site
+
+Every chapter opens with the epigraph from the printed notes and closes with that chapter's tutorial sheet, boxed so it is easy to find. Definitions, theorems and corollaries are numbered and can be linked to directly — click the anchor beside any heading to get its address.
+
+The chapters depend on each other in order. @sec-limits needs the sequence limits of @sec-sequences; @sec-differentiation is stated in terms of the limits of @sec-limits; @sec-integration uses the mean value theorem from @sec-applications. Reading straight through works.
+
+Two shorter routes through the material:
+
+**Before the first test.** @sec-basics, @sec-functions and @sec-sequences. Inequalities, absolute values, induction and the sequence limit laws — the material the rest of the course assumes you can do without thinking about it.
+
+**The calculus proper.** @sec-limits through @sec-integration. Limits, the derivative and its applications, then the integral. This is the part that is unfamiliar; the first three chapters are mostly consolidation.
+
+The tutorial questions are the point of the course. There are no worked solutions here, in either edition.
+
+## Downloads
+
+The original compiled PDFs are on the [downloads page](appendix/downloads.qmd): the full set of notes as one document, and each chapter on its own. Two past examination papers are on the [past exams page](appendix/past-exams.qmd).
+
+Corrections to the web edition are welcome — see [about](appendix/about.qmd).

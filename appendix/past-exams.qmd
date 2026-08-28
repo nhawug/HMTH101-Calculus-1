@@ -1,0 +1,14 @@
+# Past exam papers {.unnumbered}
+
+Two past HMTH101 papers, included for revision. Both are three-page question papers with no solutions.
+
+| Paper | Pages | |
+|:--|--:|:--|
+| December 2013 final examination | 3 | [PDF](../Past_Exams/decem2013.pdf) |
+| Winter 2017 final examination | 3 | [PDF](../Past_Exams/wintCalculus17.pdf) |
+
+: {tbl-colwidths="[54,16,30]"}
+
+The examinable material is the whole of the notes. Work the tutorial sheets at the end of each chapter first — the papers assume you have done them, and several questions are close relatives of tutorial questions.
+
+The `.tex` source for both papers, along with the University of Zimbabwe examination class files (`Past_Exams/uz-exam/`), is in the [repository](https://github.com/Donniezvadah/HMTH101-Calculus-1).
