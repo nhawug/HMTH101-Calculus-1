@@ -43,11 +43,15 @@ Practice makes perfect! I have included previous years' exam papers to help with
 ## 🛠️ How to Use This Repository
 
 *   **To read the notes:** Simply click on the chapter links above and open the `.pdf` files directly in your browser.
-*   **To view the code:** You can view the `.tex` files to see how I formatted the equations. 
+*   **To view the code:** You can view the `.tex` files to see how I formatted the equations.
+  
 
 ### LaTeX Example
 Calculus requires heavy mathematical notation, which is why these notes are built in LaTeX. For example, the formal definition of a derivative is formatted as:
 $$f^{\prime}(x_{0}) =\displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0})}{h}$$
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 ---
 *Note: This is a personal study portfolio and is not an official university publication.*
