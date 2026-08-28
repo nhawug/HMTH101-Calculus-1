@@ -40,6 +40,8 @@ Practice makes perfect! I have included previous years' exam papers to help with
 * **[2013 Final Exam Question Paper](./Past_Exams/decem2013.pdf)**
 * **[2017 Final Exam Question Paper](./Past_Exams/wintCalculus17.pdf)**
 
+* **Next Course:** Finished with Calculus 1? Check out my notes for [HMTHCS111 Calculus 2: Calculus of Several Variables](https://github.com/nhawug/HMTHCS111-Calculus-2).
+
 ## 🛠️ How to Use This Repository
 
 *   **To read the notes:** Simply click on the chapter links above and open the `.pdf` files directly in your browser.
