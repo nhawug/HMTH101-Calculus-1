@@ -1,5 +1,9 @@
 # HMTH101 Calculus 1 - Study Notes
 
+![Course](https://img.shields.io/badge/Course-HMTH101-blue)
+![LaTeX](https://img.shields.io/badge/Typeset_in-LaTeX-008080?logo=latex)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 Welcome to my repository for **HMTH101 Calculus of Single Variables**! 
 
 This repository contains my digitized study notes based on the lectures by G. NHAWU at the University of Zimbabwe. I have typeset these notes in LaTeX for clean mathematical formatting and compiled them into easy-to-read PDFs.
