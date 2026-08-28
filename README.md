@@ -53,5 +53,5 @@ $$f^{\prime}(x_{0}) =\displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0})}{h}$$
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
----
+
 *Note: This is a personal study portfolio and is not an official university publication.*
